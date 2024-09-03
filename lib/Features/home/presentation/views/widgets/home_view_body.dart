@@ -1,4 +1,5 @@
 import 'package:carwash/Features/home/presentation/views/widgets/custom_text_field.dart';
+import 'package:carwash/Features/home/presentation/views/widgets/featured_service_widget.dart';
 import 'package:carwash/constants.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
 import 'package:flutter/material.dart';
@@ -24,21 +25,6 @@ class HomeViewBody extends StatelessWidget {
           FeaturedServiceWidget(),
         ],
       ),
-    );
-  }
-}
-
-class FeaturedServiceWidget extends StatelessWidget {
-  const FeaturedServiceWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        Text('Featured Services', style: AppStyles.style16w500),
-        SizedBox(height: 10),
-        
-      ],
     );
   }
 }

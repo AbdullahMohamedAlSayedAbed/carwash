@@ -1,7 +1,5 @@
-import 'package:carwash/Features/home/presentation/views/widgets/custom_text_field.dart';
 import 'package:carwash/Features/home/presentation/views/widgets/home_view_body.dart';
 import 'package:carwash/core/Utils/app_color.dart';
-import 'package:carwash/core/Utils/app_styles.dart';
 import 'package:carwash/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
