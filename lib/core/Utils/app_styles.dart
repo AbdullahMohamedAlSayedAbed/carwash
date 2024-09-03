@@ -7,4 +7,9 @@ abstract class AppStyles {
     fontWeight: FontWeight.w700,
     color: AppColors.primaryColor,
   );
+  static const style16w500 = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    color: Colors.grey,
+  );
 }
