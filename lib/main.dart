@@ -1,4 +1,4 @@
-import 'package:carwash/Features/home/presentation/views/home_view.dart';
+import 'package:carwash/Features/home/presentation/views/widgets/home_nav_bar_widget.dart';
 import 'package:carwash/core/Utils/app_color.dart';
 import 'package:carwash/core/controllers/cubit/localizations_cubit.dart';
 import 'package:carwash/generated/l10n.dart';
@@ -34,8 +34,9 @@ class CarWash extends StatelessWidget {
                 primaryColor: AppColors.primaryColor,
                 colorScheme: ColorScheme.fromSeed(
                   seedColor: AppColors.primaryColor,
-                )),
-            home: const HomeView(),
+                ),
+                ),
+            home: const HomeNavBarWidget(),
           );
         },
       ),

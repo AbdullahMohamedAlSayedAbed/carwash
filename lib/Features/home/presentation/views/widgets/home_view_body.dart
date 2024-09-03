@@ -37,6 +37,7 @@ class HomeViewBody extends StatelessWidget {
           children: [
             const Text('a clean car is a', style: AppStyles.style30w700),
             const Text('happy car!', style: AppStyles.style30w700),
+            const SizedBox(height: 10),
             const CustomTextField(
                 prefixIcon: Icon(Icons.search, color: Colors.grey),
                 suffixIcon: Icon(Icons.list, color: Colors.grey),

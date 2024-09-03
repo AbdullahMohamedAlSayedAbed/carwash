@@ -16,4 +16,8 @@ abstract class AppStyles {
     fontSize: 18,
     color: Colors.white,
   );
+  static const style14= TextStyle(
+    fontSize: 14,
+    color: Colors.white,
+  );
 }

@@ -1,3 +1,4 @@
+import 'package:carwash/Features/home/presentation/views/widgets/custom_notifications_icon_button.dart';
 import 'package:carwash/Features/home/presentation/views/widgets/home_view_body.dart';
 import 'package:carwash/core/Utils/app_color.dart';
 import 'package:carwash/generated/l10n.dart';
@@ -10,18 +11,9 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+       
         title: Text(S.of(context).HeryMark),
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: Badge.count(
-                count: 1,
-                child: const Icon(
-                  Icons.notifications,
-                  color: AppColors.primaryColor,
-                ),
-              ))
-        ],
+        actions: const [CustomNotificationsIconButton()],
       ),
       body: const HomeViewBody(),
     );
