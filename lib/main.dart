@@ -1,5 +1,6 @@
 import 'package:carwash/Features/home/presentation/views/widgets/home_nav_bar_widget.dart';
 import 'package:carwash/core/Utils/app_color.dart';
+import 'package:carwash/core/Utils/app_route.dart';
 import 'package:carwash/core/controllers/cubit/localizations_cubit.dart';
 import 'package:carwash/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -37,6 +38,8 @@ class CarWash extends StatelessWidget {
                 ),
                 ),
             home: const HomeNavBarWidget(),
+            onGenerateRoute: AppRoute.onGenerateRoute,
+             initialRoute: AppRoute.homeNavBar,
           );
         },
       ),

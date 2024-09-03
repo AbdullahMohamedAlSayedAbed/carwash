@@ -9,6 +9,7 @@ class AboutUsView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
          backgroundColor: Colors.white,
+         centerTitle: true,
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context);

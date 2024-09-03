@@ -1,10 +1,10 @@
 import 'package:carwash/Features/home/presentation/views/about_us_view.dart';
 import 'package:carwash/Features/home/presentation/views/home_view.dart';
 import 'package:carwash/Features/profile/presentation/views/profile_view.dart';
+import 'package:carwash/Features/services/presentation/views/services_view.dart';
 import 'package:carwash/core/Utils/app_color.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
 PersistentTabController _controller = PersistentTabController();
@@ -33,7 +33,7 @@ class HomeNavBarWidget extends StatelessWidget {
 List<Widget> _buildScreens() {
   return [
     const HomeView(),
-    const AboutUsView(),
+    const ServicesView(),
     const ProfileView(),
   ];
 }
