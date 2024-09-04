@@ -1,8 +1,10 @@
 import 'package:carwash/Features/home/data/models/appointment_model.dart';
+import 'package:carwash/Features/home/presentation/views/about_us_view.dart';
 import 'package:carwash/Features/home/presentation/views/widgets/custom_text_field.dart';
 import 'package:carwash/Features/home/presentation/views/widgets/featured_service_widget.dart';
 import 'package:carwash/Features/home/presentation/views/widgets/your_appointment_widget.dart';
 import 'package:carwash/constants.dart';
+import 'package:carwash/core/Utils/app_route.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
@@ -48,8 +50,16 @@ class HomeViewBody extends StatelessWidget {
             Column(
                 children: List.generate(
               items.length,
-              (index) => YourAppointmentWidget(
-                item: items[index],
+              (index) => GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AboutUsView()));
+                },
+                child: YourAppointmentWidget(
+                  item: items[index],
+                ),
               ),
             )),
           ],

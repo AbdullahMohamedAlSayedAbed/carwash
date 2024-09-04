@@ -41,26 +41,23 @@ List<Widget> _buildScreens() {
 List<PersistentBottomNavBarItem> _navBarsItems() {
   return [
     PersistentBottomNavBarItem(
-      icon: const Icon(Icons.home, color: Colors.white),
-      inactiveIcon: const Icon(Icons.home_outlined, color: Colors.white),
-      title: 'Home',
-      textStyle: AppStyles.style14,
-      activeColorPrimary: Colors.white
-    ),
+        icon: const Icon(Icons.home, color: Colors.white),
+        inactiveIcon: const Icon(Icons.home_outlined, color: Colors.white),
+        title: 'Home',
+        textStyle: AppStyles.style14White,
+        activeColorPrimary: Colors.white),
     PersistentBottomNavBarItem(
-      icon: const Icon(Icons.local_car_wash, color: Colors.white),
-      inactiveIcon:
-          const Icon(Icons.local_car_wash_outlined, color: Colors.white),
-      title: 'Services',
-      textStyle: AppStyles.style14,
-      activeColorPrimary: Colors.white
-    ),
+        icon: const Icon(Icons.local_car_wash, color: Colors.white),
+        inactiveIcon:
+            const Icon(Icons.local_car_wash_outlined, color: Colors.white),
+        title: 'Services',
+        textStyle: AppStyles.style14White,
+        activeColorPrimary: Colors.white),
     PersistentBottomNavBarItem(
-      icon: const Icon(Icons.person, color: Colors.white),
-      inactiveIcon: const Icon(Icons.person_outline, color: Colors.white),
-      title: 'Profile',
-      textStyle: AppStyles.style14,
-      activeColorPrimary: Colors.white
-    ),
+        icon: const Icon(Icons.person, color: Colors.white),
+        inactiveIcon: const Icon(Icons.person_outline, color: Colors.white),
+        title: 'Profile',
+        textStyle: AppStyles.style14White,
+        activeColorPrimary: Colors.white),
   ];
 }

@@ -37,9 +37,8 @@ class CarWash extends StatelessWidget {
                   seedColor: AppColors.primaryColor,
                 ),
                 ),
-            home: const HomeNavBarWidget(),
             onGenerateRoute: AppRoute.onGenerateRoute,
-             initialRoute: AppRoute.homeNavBar,
+            initialRoute: AppRoute.homeNavBar,
           );
         },
       ),
