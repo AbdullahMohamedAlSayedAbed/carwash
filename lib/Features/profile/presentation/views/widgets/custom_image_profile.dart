@@ -11,7 +11,7 @@ class CustomImageProfile extends StatelessWidget {
     return CircleAvatar(
       radius: 40,
       child: CachedNetworkImage(
-        imageUrl: "https://i.pravatar.cc/300",
+        imageUrl: "https://www.workitdaily.com/media-library/professional-man-creating-an-outstanding-personal-branding-statement.jpg?id=22025730&width=1200&height=800&quality=85&coordinates=77%2C0%2C77%2C0",
         imageBuilder: (context, imageProvider) => Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(40),

@@ -1,7 +1,10 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carwash/Features/home/presentation/views/widgets/custom_notifications_icon_button.dart';
+import 'package:carwash/Features/home/presentation/views/widgets/custom_secondary_button.dart';
+import 'package:carwash/Features/profile/presentation/views/widgets/custom_car_type.dart';
 import 'package:carwash/Features/profile/presentation/views/widgets/custom_image_profile.dart';
-import 'package:carwash/core/Utils/app_color.dart';
+import 'package:carwash/Features/profile/presentation/views/widgets/custom_user_name.dart';
+import 'package:carwash/Features/profile/presentation/views/widgets/profile_view_body.dart';
+import 'package:carwash/constants.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
@@ -20,21 +23,6 @@ class ProfileView extends StatelessWidget {
         ],
       ),
       body: const ProfileViewBody(),
-    );
-  }
-}
-
-class ProfileViewBody extends StatelessWidget {
-  const ProfileViewBody({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        Row(
-          children: [CustomImageProfile()],
-        )
-      ],
     );
   }
 }
