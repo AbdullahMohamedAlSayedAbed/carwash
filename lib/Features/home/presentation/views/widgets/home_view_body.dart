@@ -3,6 +3,7 @@ import 'package:carwash/Features/home/presentation/views/about_us_view.dart';
 import 'package:carwash/Features/home/presentation/views/widgets/custom_text_field.dart';
 import 'package:carwash/Features/home/presentation/views/widgets/featured_service_widget.dart';
 import 'package:carwash/Features/home/presentation/views/widgets/your_appointment_widget.dart';
+import 'package:carwash/Features/profile_and_stander_wash/presentation/views/standard_wash_view.dart';
 import 'package:carwash/constants.dart';
 import 'package:carwash/core/Utils/app_route.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
@@ -52,16 +53,24 @@ class HomeViewBody extends StatelessWidget {
               items.length,
               (index) => GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const AboutUsView()));
+                  if (index == 0) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const StandardWashView()));
+                  } else if (index == 2) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const AboutUsView()));
+                  }
                 },
                 child: YourAppointmentWidget(
                   item: items[index],
                 ),
               ),
             )),
+            const SizedBox(height: 20)
           ],
         ),
       ),

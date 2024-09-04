@@ -1,4 +1,4 @@
-import 'package:carwash/Features/profile/data/models/settings_item_model.dart';
+import 'package:carwash/Features/profile_and_stander_wash/data/models/settings_item_model.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
