@@ -1,7 +1,12 @@
 import 'package:carwash/Features/home/presentation/views/widgets/custom_notifications_icon_button.dart';
+import 'package:carwash/Features/profile_and_stander_wash/data/repo/profile_repo_impl.dart';
+import 'package:carwash/Features/profile_and_stander_wash/presentation/controllers/cubit/get_profile_data_cubit.dart';
 import 'package:carwash/Features/profile_and_stander_wash/presentation/views/widgets/profile_view_body.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
+import 'package:carwash/core/services/firestore_service.dart';
+import 'package:carwash/core/services/get_it_service.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
@@ -17,7 +22,10 @@ class ProfileView extends StatelessWidget {
           CustomNotificationsIconButton(),
         ],
       ),
-      body: const ProfileViewBody(),
+      body: BlocProvider(
+        create: (context) => GetProfileDataCubit(ProfileRepoImpl(databaseService: FireStoreService()))..getProfileData(),
+        child: const ProfileViewBody(),
+      ),
     );
   }
 }

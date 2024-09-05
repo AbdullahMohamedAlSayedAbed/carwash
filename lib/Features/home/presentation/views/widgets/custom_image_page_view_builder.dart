@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class CustomImagePageViewBuilder extends StatelessWidget {
   const CustomImagePageViewBuilder({
-    super.key,
+    super.key, required this.image,
   });
-
+  final String image;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,8 +13,8 @@ class CustomImagePageViewBuilder extends StatelessWidget {
       // margin: const EdgeInsets.all(2),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        image: const DecorationImage(
-            image: AssetImage('assets/images/car.webp'), fit: BoxFit.fill),
+        image:  DecorationImage(
+            image: AssetImage(image), fit: BoxFit.fill),
       ),
     );
   }

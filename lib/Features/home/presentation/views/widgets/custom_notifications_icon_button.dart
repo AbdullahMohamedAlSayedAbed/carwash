@@ -10,9 +10,9 @@ class CustomNotificationsIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
         onPressed: () {},
-        icon: Badge.count(
-          count: 1,
-          child: const Icon(
+        icon: const Badge(
+          smallSize: 10,
+          child: Icon(
             Icons.notifications,
             color: AppColors.primaryColor,
           ),

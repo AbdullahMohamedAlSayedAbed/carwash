@@ -5,7 +5,6 @@ import 'package:carwash/Features/home/presentation/views/widgets/featured_servic
 import 'package:carwash/Features/home/presentation/views/widgets/your_appointment_widget.dart';
 import 'package:carwash/Features/profile_and_stander_wash/presentation/views/standard_wash_view.dart';
 import 'package:carwash/constants.dart';
-import 'package:carwash/core/Utils/app_route.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
@@ -19,13 +18,13 @@ class HomeViewBody extends StatelessWidget {
         buttonText: 'Book Now',
         image: 'assets/images/car.webp'),
     AppointmentItemModel(
-        title: 'Your Appointment',
-        description: 'You dont have any \ncar wash appoinment yet',
-        buttonText: 'Book Now',
-        image: 'assets/images/car.webp'),
+        title: 'Promotions',
+        description: 'For our most loyal \ncustomers!',
+        buttonText: 'Join now',
+        image: 'assets/images/offer.jpeg'),
     AppointmentItemModel(
-        title: 'Your Appointment',
-        description: 'You dont have any \ncar wash appoinment yet',
+        title: 'About Us',
+        description: 'Cheep \ncar wash about us',
         buttonText: 'Book Now',
         image: 'assets/images/car.webp'),
   ];

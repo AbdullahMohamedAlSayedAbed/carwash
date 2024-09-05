@@ -2,13 +2,24 @@ import 'package:carwash/Features/home/presentation/views/widgets/home_nav_bar_wi
 import 'package:carwash/core/Utils/app_color.dart';
 import 'package:carwash/core/Utils/app_route.dart';
 import 'package:carwash/core/controllers/cubit/localizations_cubit.dart';
+import 'package:carwash/core/services/get_it_service.dart';
+import 'package:carwash/firebase_options.dart';
 import 'package:carwash/generated/l10n.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
 
-void main() {
+import 'core/services/custom_bloc_observer.dart';
+
+void main() async{
+    WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  setupGetit();
+  Bloc.observer = CustomBlocObserver();
   runApp(const CarWash());
 }
 

@@ -2,7 +2,6 @@ import 'package:carwash/Features/home/data/models/appointment_model.dart';
 import 'package:carwash/Features/home/presentation/views/widgets/custom_image_appointment.dart';
 import 'package:carwash/Features/home/presentation/views/widgets/custom_secondary_button.dart';
 import 'package:carwash/core/Utils/app_color.dart';
-import 'package:carwash/core/Utils/app_route.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
 import 'package:flutter/material.dart';
 

@@ -3,20 +3,22 @@ import 'package:flutter/material.dart';
 
 class CustomUserName extends StatelessWidget {
   const CustomUserName({
-    super.key,
+    super.key, required this.name, required this.email,
   });
-
+  final String name ;
+  final String email;
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Mark Smith',
+          name,
           style: AppStyles.style18.copyWith(color: Colors.black),
           overflow: TextOverflow.ellipsis,
         ),
-        const Text(
-          'personal info',
+         Text(
+          email,
           style: AppStyles.style16w500,
           overflow: TextOverflow.ellipsis,
         ),

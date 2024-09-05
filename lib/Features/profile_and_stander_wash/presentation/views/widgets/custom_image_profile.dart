@@ -3,15 +3,16 @@ import 'package:flutter/material.dart';
 
 class CustomImageProfile extends StatelessWidget {
   const CustomImageProfile({
-    super.key,
+    super.key, required this.image,
   });
-
+  final String image;
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
       radius: 40,
       child: CachedNetworkImage(
-        imageUrl: "https://www.workitdaily.com/media-library/professional-man-creating-an-outstanding-personal-branding-statement.jpg?id=22025730&width=1200&height=800&quality=85&coordinates=77%2C0%2C77%2C0",
+        imageUrl:
+        image,
         imageBuilder: (context, imageProvider) => Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(40),
