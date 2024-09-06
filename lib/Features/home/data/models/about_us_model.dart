@@ -3,6 +3,6 @@ class AboutUsModel {
   final String description;
   final String image;
 
-  const AboutUsModel(
+   AboutUsModel(
       {required this.title, required this.description, required this.image});
 }

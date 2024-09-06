@@ -5,6 +5,6 @@ class SettingsItemModel {
   final String text;
   final IconData icon;
 
-  const SettingsItemModel(
+   SettingsItemModel(
       {required this.backgroundColor, required this.text, required this.icon});
 }

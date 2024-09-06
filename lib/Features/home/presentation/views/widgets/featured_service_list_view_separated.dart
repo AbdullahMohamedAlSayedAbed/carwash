@@ -1,25 +1,26 @@
 import 'package:carwash/Features/home/data/models/Services_item_model.dart';
 import 'package:carwash/Features/home/presentation/views/widgets/featured_service_item_widget.dart';
+import 'package:carwash/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class FeaturedServiceListViewSeparated extends StatelessWidget {
   const FeaturedServiceListViewSeparated({
     super.key,
   });
-  final List<ServicesItemModel> items = const [
-    ServicesItemModel(
-        image: 'assets/images/exterior.jpeg', title: 'exterior'),
-    ServicesItemModel(
-        image: 'assets/images/interior.jpeg', title: 'interior'),
-    ServicesItemModel(
-        image: 'assets/images/detailing.jpeg', title: 'detailing'),
-    ServicesItemModel(
-        image: 'assets/images/polish.jpeg', title: 'polish'),
-    ServicesItemModel(
-        image: 'assets/images/tyre_wash.jpeg', title: 'tyre wash'),
-  ];
   @override
   Widget build(BuildContext context) {
+  final List<ServicesItemModel> items =  [
+    ServicesItemModel(
+        image: 'assets/images/exterior.jpeg', title: S.of(context).Exterior),
+    ServicesItemModel(
+        image: 'assets/images/interior.jpeg', title: S.of(context).interior),
+    ServicesItemModel(
+        image: 'assets/images/detailing.jpeg', title: S.of(context).Detailing),
+    ServicesItemModel(
+        image: 'assets/images/polish.jpeg', title: S.of(context).Polish),
+    ServicesItemModel(
+        image: 'assets/images/tyre_wash.jpeg', title: S.of(context).tyreWash),
+  ];
     return ListView.separated(
       scrollDirection: Axis.horizontal,
       

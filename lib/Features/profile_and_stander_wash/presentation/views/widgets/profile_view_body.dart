@@ -4,29 +4,37 @@ import 'package:carwash/Features/profile_and_stander_wash/presentation/views/wid
 import 'package:carwash/Features/profile_and_stander_wash/presentation/views/widgets/custom_image_profile.dart';
 import 'package:carwash/Features/profile_and_stander_wash/presentation/views/widgets/custom_items_settings.dart';
 import 'package:carwash/Features/profile_and_stander_wash/presentation/views/widgets/custom_user_name.dart';
+import 'package:carwash/Features/profile_and_stander_wash/presentation/views/widgets/language_select_widget.dart';
 import 'package:carwash/constants.dart';
+import 'package:carwash/core/Utils/app_color.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
+import 'package:carwash/core/controllers/cubit/localizations_cubit.dart';
+import 'package:carwash/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProfileViewBody extends StatelessWidget {
   const ProfileViewBody({super.key});
-  final List<SettingsItemModel> items = const [
-    SettingsItemModel(
-        backgroundColor: Colors.blue, text: 'Edit Profile', icon: Icons.edit),
-    SettingsItemModel(
-        backgroundColor: Colors.blue,
-        text: 'Payment Information',
-        icon: Icons.payment),
-    SettingsItemModel(
-        backgroundColor: Colors.yellow,
-        text: 'Loyalty Club',
-        icon: Icons.loyalty),
-    SettingsItemModel(
-        backgroundColor: Colors.red, text: 'Log Out', icon: Icons.logout),
-  ];
   @override
   Widget build(BuildContext context) {
+    final List<SettingsItemModel> items = [
+      SettingsItemModel(
+          backgroundColor: Colors.blue,
+          text: S.of(context).EditProfile,
+          icon: Icons.edit),
+      SettingsItemModel(
+          backgroundColor: Colors.blue,
+          text: S.of(context).PaymentInformation,
+          icon: Icons.payment),
+      SettingsItemModel(
+          backgroundColor: Colors.yellow,
+          text: S.of(context).LoyaltyClub,
+          icon: Icons.loyalty),
+      SettingsItemModel(
+          backgroundColor: Colors.red,
+          text: S.of(context).LogOut,
+          icon: Icons.logout),
+    ];
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       child: Padding(
@@ -56,11 +64,15 @@ class ProfileViewBody extends StatelessWidget {
             }),
             const CustomCarType(),
             const SizedBox(height: 20),
-            const Text('Settings', style: AppStyles.style20w700),
+            Text(S.of(context).Settings, style: AppStyles.style20w700),
             const SizedBox(height: 10),
             ...List.generate(items.length, (index) {
               return CustomItemsSettings(item: items[index]);
             }),
+            const SizedBox(height: 20),
+            Text(S.of(context).appLanguage, style: AppStyles.style20w700),
+            const SizedBox(height: 10),
+            const LanguageSelector(),
           ],
         ),
       ),

@@ -3,6 +3,7 @@ import 'package:carwash/core/Utils/app_color.dart';
 import 'package:carwash/core/Utils/app_route.dart';
 import 'package:carwash/core/controllers/cubit/localizations_cubit.dart';
 import 'package:carwash/core/services/get_it_service.dart';
+import 'package:carwash/core/services/shard_pref.dart';
 import 'package:carwash/firebase_options.dart';
 import 'package:carwash/generated/l10n.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -13,12 +14,14 @@ import 'package:intl/intl.dart';
 
 import 'core/services/custom_bloc_observer.dart';
 
-void main() async{
-    WidgetsFlutterBinding.ensureInitialized();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
   setupGetit();
+ await ShardPref.init();
   Bloc.observer = CustomBlocObserver();
   runApp(const CarWash());
 }
@@ -29,7 +32,7 @@ class CarWash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => LocalizationsCubit(),
+      create: (context) => LocalizationsCubit()..gitLanguage(),
       child: BlocBuilder<LocalizationsCubit, Locale>(
         builder: (context, state) {
           return MaterialApp(
@@ -43,11 +46,11 @@ class CarWash extends StatelessWidget {
             supportedLocales: S.delegate.supportedLocales,
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
-                primaryColor: AppColors.primaryColor,
-                colorScheme: ColorScheme.fromSeed(
-                  seedColor: AppColors.primaryColor,
-                ),
-                ),
+              primaryColor: AppColors.primaryColor,
+              colorScheme: ColorScheme.fromSeed(
+                seedColor: AppColors.primaryColor,
+              ),
+            ),
             onGenerateRoute: AppRoute.onGenerateRoute,
             initialRoute: AppRoute.homeNavBar,
           );

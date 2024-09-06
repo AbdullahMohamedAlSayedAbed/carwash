@@ -1,5 +1,6 @@
 import 'package:carwash/Features/home/presentation/views/widgets/about_us_view_body.dart';
 import 'package:carwash/Features/home/presentation/views/widgets/custom_notifications_icon_button.dart';
+import 'package:carwash/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class AboutUsView extends StatelessWidget {
@@ -16,7 +17,7 @@ class AboutUsView extends StatelessWidget {
               Navigator.pop(context);
             },
             icon: const Icon(Icons.arrow_back_ios)),
-        title: const Text('About Us'),
+        title:  Text(S.of(context).AboutUs),
         actions: const [
           CustomNotificationsIconButton(),
         ],

@@ -2,7 +2,7 @@ class AppointmentItemModel {
   final String title, description, image, buttonText;
   final void Function()? onPressed;
 
-   const AppointmentItemModel(
+    AppointmentItemModel(
       {required this.title,
       required this.description,
       required this.image,

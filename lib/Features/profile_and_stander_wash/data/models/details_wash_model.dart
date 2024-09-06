@@ -6,7 +6,7 @@ class DetailsWashModel {
   final IconData icon;
   final Color iconColor;
 
-  const DetailsWashModel(
+   DetailsWashModel(
       {required this.title,
       required this.description,
       required this.icon,

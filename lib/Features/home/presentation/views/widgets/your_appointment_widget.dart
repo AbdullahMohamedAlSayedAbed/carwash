@@ -28,20 +28,23 @@ class YourAppointmentWidget extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsetsDirectional.only(start: 20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      item.description,
-                      style: AppStyles.style18,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    CustomSecondaryButton(
-                      onPressed: item.onPressed,
-                      text: item.buttonText,
-                    )
-                  ],
+                child: SizedBox(
+                  width:  MediaQuery.of(context).size.width * 0.7 - 60,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        item.description,
+                        style: AppStyles.style18,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      CustomSecondaryButton(
+                        onPressed: item.onPressed,
+                        text: item.buttonText,
+                      )
+                    ],
+                  ),
                 ),
               ),
               CustomImageAppointment(

@@ -12,7 +12,7 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
        
-        title: Text(S.of(context).HeryMark),
+        title: Text(S.of(context).hey),
         actions: const [CustomNotificationsIconButton()],
       ),
       body: const HomeViewBody(),

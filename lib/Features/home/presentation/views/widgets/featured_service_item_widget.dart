@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 
 class FeaturedServiceItemWidget extends StatelessWidget {
   const FeaturedServiceItemWidget({
-    super.key, required this.item,
+    super.key,
+    required this.item,
   });
   final ServicesItemModel item;
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -16,7 +17,17 @@ class FeaturedServiceItemWidget extends StatelessWidget {
           radius: 30,
           backgroundImage: AssetImage(item.image),
         ),
-        Text(item.title),
+        Flexible(
+          child: FittedBox(
+            alignment: AlignmentDirectional.center,
+            fit: BoxFit.scaleDown,
+            child: Text(
+              item.title,
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ),
       ],
     );
   }

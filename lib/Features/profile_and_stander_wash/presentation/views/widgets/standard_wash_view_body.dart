@@ -5,29 +5,30 @@ import 'package:carwash/Features/profile_and_stander_wash/presentation/views/wid
 import 'package:carwash/constants.dart';
 import 'package:carwash/core/Utils/app_color.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
+import 'package:carwash/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class StandardWashViewBody extends StatelessWidget {
   const StandardWashViewBody({super.key});
-  final List<DetailsWashModel> items = const [
+  @override
+  Widget build(BuildContext context) {
+  final List<DetailsWashModel> items =  [
     DetailsWashModel(
-        title: 'Date and time',
+        title: S.of(context).DateAndTime,
         description: '11:30pm,12.12.2022',
         icon: Icons.date_range,
         iconColor: Colors.blue),
     DetailsWashModel(
-        title: 'Location',
+        title: S.of(context).Location,
         description: '123 main st,Brooklyn NY 11201',
         icon: Icons.add_location,
         iconColor: Colors.blue),
     DetailsWashModel(
-        title: 'payment method',
+        title: S.of(context).paymentMethod,
         description: 'Apple Pay',
         icon: Icons.money,
         iconColor: Colors.green),
   ];
-  @override
-  Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.all(kDefaultPadding),
@@ -47,8 +48,8 @@ class StandardWashViewBody extends StatelessWidget {
             ),
             const CustomQRCode(),
             const SizedBox(height: 5),
-            const Text(
-              'Scan this code to start your car \n wash experience!',
+             Text(
+              S.of(context).scanQR,
               style: AppStyles.style14Grey,
               textAlign: TextAlign.center,
             ),
@@ -57,11 +58,11 @@ class StandardWashViewBody extends StatelessWidget {
                 width: double.infinity,
                 height: 50,
                 child: CustomSecondaryButton(
-                    text: 'Edit appointment', onPressed: () {})),
+                    text: S.of(context).EditAppointment, onPressed: () {})),
             const SizedBox(height: 20),
             TextButton(
                 onPressed: () {},
-                child: Text('Cancel appointment',
+                child: Text(S.of(context).CancelAppointment,
                     style:
                         AppStyles.style18.copyWith(color: AppColors.orange))),
           ],

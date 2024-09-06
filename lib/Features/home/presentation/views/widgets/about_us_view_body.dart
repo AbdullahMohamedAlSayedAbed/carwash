@@ -3,6 +3,7 @@ import 'package:carwash/Features/home/presentation/views/widgets/custom_image_pa
 import 'package:carwash/Features/home/presentation/views/widgets/custom_smooth_page_indicator.dart';
 import 'package:carwash/constants.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
+import 'package:carwash/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class AboutUsViewBody extends StatefulWidget {
@@ -16,23 +17,6 @@ class _AboutUsViewBodyState extends State<AboutUsViewBody> {
   final PageController controller = PageController(
     initialPage: 0,
   );
-  final List<AboutUsModel> aboutUsList = [
-    const AboutUsModel(
-        title: 'Convenient Car Care at Your Fingertips:',
-        description:
-            'At our car wash app, we understand the importance of convenience in your busy life. We have developed a user-friendly mobile application that allows you to schedule and manage your car wash appointments with just a few taps on your phone',
-        image: 'assets/images/pageview1.png'),
-    const AboutUsModel(
-        title: 'Unmatched Quality and Attention to Detail:',
-        description:
-            'We pride ourselves on delivering an exceptional car wash experience with unmatched quality and attention to detail. Our team of trained professionals sises the latest techniques and eco- friendly products to ensure that your vehicle receives the care it deserves.',
-        image: 'assets/images/pageview2.jpeg'),
-    const AboutUsModel(
-        title: 'Customizable Services to Suit Your Needs:',
-        description:
-            'Every car has unique needs, which is why our car wash app offers customizatile services to suit your specific requirements. Whether you need a quick exterior wash or a comprehensive package that Includes waxing, polishing, and interior detalling. our app allows you to select the services that best fit your needs and budget',
-        image: 'assets/images/pageview3.jpeg'),
-  ];
   @override
   void dispose() {
     controller.dispose();
@@ -41,6 +25,20 @@ class _AboutUsViewBodyState extends State<AboutUsViewBody> {
 
   @override
   Widget build(BuildContext context) {
+  final List<AboutUsModel> aboutUsList = [
+     AboutUsModel(
+        title: S.of(context).titlePageView1,
+        description:S.of(context).descriptionPageView1,
+                image: 'assets/images/pageview1.png'),
+     AboutUsModel(
+          title: S.of(context).titlePageView2,
+          description: S.of(context).descriptionPageView2,
+                  image: 'assets/images/pageview2.jpeg'),
+     AboutUsModel(
+          title: S.of(context).titlePageView3,
+          description: S.of(context).descriptionPageView3,
+        image: 'assets/images/pageview3.jpeg'),
+  ];
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
       child: Stack(

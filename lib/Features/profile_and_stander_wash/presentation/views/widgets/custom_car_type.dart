@@ -1,5 +1,6 @@
 import 'package:carwash/Features/home/presentation/views/widgets/custom_secondary_button.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
+import 'package:carwash/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class CustomCarType extends StatelessWidget {
@@ -17,7 +18,7 @@ class CustomCarType extends StatelessWidget {
           color: Colors.grey,
           height: 20,
         ),
-        const Text('Car Type', style: AppStyles.style20w700),
+         Text(S.of(context).CarType, style: AppStyles.style20w700),
         const Divider(
           thickness: 1,
           color: Colors.grey,
@@ -33,7 +34,7 @@ class CustomCarType extends StatelessWidget {
             Text('Coupe',
                 style: AppStyles.style18.copyWith(color: Colors.grey)),
             const Spacer(),
-            CustomSecondaryButton(text: 'Change', onPressed: () {}),
+            CustomSecondaryButton(text: S.of(context).Change, onPressed: () {}),
           ],
         ),
       ],

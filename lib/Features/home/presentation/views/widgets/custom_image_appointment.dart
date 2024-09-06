@@ -1,4 +1,3 @@
-import 'package:carwash/core/Utils/app_color.dart';
 import 'package:flutter/material.dart';
 
 class CustomImageAppointment extends StatelessWidget {
@@ -10,8 +9,8 @@ class CustomImageAppointment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: const BorderRadius.only(
-          topRight: Radius.circular(16), bottomRight: Radius.circular(16)),
+      borderRadius: const BorderRadiusDirectional.only(
+          topEnd: Radius.circular(16), bottomEnd: Radius.circular(16)),
       child: Image.asset(
         name,
         height: double.infinity,

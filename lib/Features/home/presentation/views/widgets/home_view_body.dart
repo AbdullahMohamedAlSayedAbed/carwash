@@ -6,44 +6,44 @@ import 'package:carwash/Features/home/presentation/views/widgets/your_appointmen
 import 'package:carwash/Features/profile_and_stander_wash/presentation/views/standard_wash_view.dart';
 import 'package:carwash/constants.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
+import 'package:carwash/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
 
-  final List<AppointmentItemModel> items = const [
-    AppointmentItemModel(
-        title: 'Your Appointment',
-        description: 'You dont have any \ncar wash appoinment yet',
-        buttonText: 'Book Now',
-        image: 'assets/images/car.webp'),
-    AppointmentItemModel(
-        title: 'Promotions',
-        description: 'For our most loyal \ncustomers!',
-        buttonText: 'Join now',
-        image: 'assets/images/offer.jpeg'),
-    AppointmentItemModel(
-        title: 'About Us',
-        description: 'Cheep \ncar wash about us',
-        buttonText: 'Book Now',
-        image: 'assets/images/car.webp'),
-  ];
-
   @override
   Widget build(BuildContext context) {
+  final List<AppointmentItemModel> items =  [
+    AppointmentItemModel(
+        title: S.of(context).yourAppointment,
+        description: S.of(context).supAppointment,
+        buttonText: S.of(context).bookNow,
+        image: 'assets/images/car.webp'),
+    AppointmentItemModel(
+        title: S.of(context).Promotions,
+        description: S.of(context).supPromotions,
+        buttonText: S.of(context).JoinNow,
+        image: 'assets/images/offer.jpeg'),
+    AppointmentItemModel(
+        title: S.of(context).AboutUs,
+        description: S.of(context).supAboutUs,
+        buttonText: S.of(context).bookNow,
+        image: 'assets/images/car.webp'),
+  ];
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('a clean car is a', style: AppStyles.style30w700),
-            const Text('happy car!', style: AppStyles.style30w700),
+             Text(S.of(context).title, style: AppStyles.style30w700),
+            // const Text('happy car!', style: AppStyles.style30w700),
             const SizedBox(height: 10),
-            const CustomTextField(
+             CustomTextField(
                 prefixIcon: Icon(Icons.search, color: Colors.grey),
                 suffixIcon: Icon(Icons.list, color: Colors.grey),
-                hintText: 'search',
+                hintText: S.of(context).search,
                 textInputType: TextInputType.text),
             const SizedBox(height: 10),
             const FeaturedServiceWidget(),

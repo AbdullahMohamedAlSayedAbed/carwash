@@ -2,6 +2,7 @@ import 'package:carwash/Features/profile_and_stander_wash/presentation/views/wid
 import 'package:carwash/Features/profile_and_stander_wash/presentation/views/widgets/custom_details_wash.dart';
 import 'package:carwash/constants.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
+import 'package:carwash/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class StandardWashView extends StatelessWidget {
@@ -17,11 +18,11 @@ class StandardWashView extends StatelessWidget {
             },
             icon: const Icon(Icons.arrow_back_ios)),
         backgroundColor: Colors.white,
-        title: const Column(
+        title:  Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text('Standard Wash', style: AppStyles.style24w700),
-            Text('Your appointments', style: AppStyles.style16w500),
+            Text(S.of(context).standardWash, style: AppStyles.style24w700),
+            Text(S.of(context).yourAppointment, style: AppStyles.style16w500),
           ],
         ),
         centerTitle: true,

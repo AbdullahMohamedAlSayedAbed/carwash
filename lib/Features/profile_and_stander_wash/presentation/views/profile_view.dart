@@ -5,6 +5,7 @@ import 'package:carwash/Features/profile_and_stander_wash/presentation/views/wid
 import 'package:carwash/core/Utils/app_styles.dart';
 import 'package:carwash/core/services/firestore_service.dart';
 import 'package:carwash/core/services/get_it_service.dart';
+import 'package:carwash/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,7 +17,7 @@ class ProfileView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: const Text('Profile', style: AppStyles.style24w700),
+        title:  Text(S.of(context).Profile, style: AppStyles.style24w700),
         centerTitle: true,
         actions: const [
           CustomNotificationsIconButton(),
