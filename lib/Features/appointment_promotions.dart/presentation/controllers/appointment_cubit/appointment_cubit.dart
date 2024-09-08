@@ -7,10 +7,10 @@ part 'appointment_state.dart';
 
 class AppointmentCubit extends Cubit<AppointmentState> {
   AppointmentCubit(this.appointmentRepoImpl) : super(AppointmentInitial());
-  final AppointmentRepoImpl appointmentRepoImpl;
-  void getAppointment() async{
+  final AppointmentAndPromotionRepoImpl appointmentRepoImpl;
+  void getAppointment() async {
     emit(AppointmentLoading());
-    var result =await appointmentRepoImpl.getAppointment();
+    var result = await appointmentRepoImpl.getAppointment();
     result.fold(
       (failure) => emit(AppointmentFailure(failure.message)),
       (data) => emit(AppointmentSuccess(data: data)),

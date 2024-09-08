@@ -1,4 +1,3 @@
-import 'package:carwash/Features/appointment_promotions.dart/presentation/views/appointment_view.dart';
 import 'package:carwash/Features/appointment_promotions.dart/presentation/views/promotions_view.dart';
 import 'package:carwash/Features/home/data/models/appointment_model.dart';
 import 'package:carwash/Features/home/presentation/views/about_us_view.dart';
@@ -16,35 +15,35 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  final List<AppointmentItemModel> items =  [
-    AppointmentItemModel(
-        title: S.of(context).yourAppointment,
-        description: S.of(context).supAppointment,
-        buttonText: S.of(context).bookNow,
-        image: 'assets/images/car.webp'),
-    AppointmentItemModel(
-        title: S.of(context).Promotions,
-        description: S.of(context).supPromotions,
-        buttonText: S.of(context).JoinNow,
-        image: 'assets/images/offer.jpeg'),
-    AppointmentItemModel(
-        title: S.of(context).AboutUs,
-        description: S.of(context).supAboutUs,
-        buttonText: S.of(context).bookNow,
-        image: 'assets/images/car.webp'),
-  ];
+    final List<AppointmentItemModel> items = [
+      AppointmentItemModel(
+          title: S.of(context).yourAppointment,
+          description: S.of(context).supAppointment,
+          buttonText: S.of(context).bookNow,
+          image: 'assets/images/car.webp'),
+      AppointmentItemModel(
+          title: S.of(context).Promotions,
+          description: S.of(context).supPromotions,
+          buttonText: S.of(context).JoinNow,
+          image: 'assets/images/offer.jpeg'),
+      AppointmentItemModel(
+          title: S.of(context).AboutUs,
+          description: S.of(context).supAboutUs,
+          buttonText: S.of(context).bookNow,
+          image: 'assets/images/car.webp'),
+    ];
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-             Text(S.of(context).title, style: AppStyles.style30w700),
+            Text(S.of(context).title, style: AppStyles.style30w700),
             // const Text('happy car!', style: AppStyles.style30w700),
             const SizedBox(height: 10),
-             CustomTextField(
-                prefixIcon: Icon(Icons.search, color: Colors.grey),
-                suffixIcon: Icon(Icons.list, color: Colors.grey),
+            CustomTextField(
+                prefixIcon: const Icon(Icons.search, color: Colors.grey),
+                suffixIcon: const Icon(Icons.list, color: Colors.grey),
                 hintText: S.of(context).search,
                 textInputType: TextInputType.text),
             const SizedBox(height: 10),
@@ -64,7 +63,7 @@ class HomeViewBody extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (context) => const AboutUsView()));
-                  }else{
+                  } else {
                     Navigator.push(
                         context,
                         MaterialPageRoute(

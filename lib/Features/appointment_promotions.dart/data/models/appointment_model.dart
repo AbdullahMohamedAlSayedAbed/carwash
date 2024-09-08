@@ -1,5 +1,4 @@
 import 'package:carwash/Features/appointment_promotions.dart/domin/entities/appointment_entity.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class AppointmentModel extends AppointmentEntity {
   AppointmentModel(

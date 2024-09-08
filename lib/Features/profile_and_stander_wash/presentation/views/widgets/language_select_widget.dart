@@ -1,4 +1,3 @@
-import 'package:carwash/core/Utils/app_color.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
 import 'package:carwash/core/controllers/cubit/localizations_cubit.dart';
 import 'package:carwash/core/services/shard_pref.dart';

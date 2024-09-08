@@ -3,7 +3,6 @@ import 'package:carwash/Features/profile_and_stander_wash/data/repo/profile_repo
 import 'package:carwash/Features/profile_and_stander_wash/presentation/controllers/cubit/get_profile_data_cubit.dart';
 import 'package:carwash/Features/profile_and_stander_wash/presentation/views/widgets/profile_view_body.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
-import 'package:carwash/core/services/firestore_service.dart';
 import 'package:carwash/core/services/get_it_service.dart';
 import 'package:carwash/generated/l10n.dart';
 import 'package:flutter/material.dart';

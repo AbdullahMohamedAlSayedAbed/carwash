@@ -3,12 +3,12 @@ import 'package:carwash/Features/profile_and_stander_wash/presentation/controlle
 import 'package:carwash/Features/profile_and_stander_wash/presentation/views/widgets/custom_car_type.dart';
 import 'package:carwash/Features/profile_and_stander_wash/presentation/views/widgets/custom_image_profile.dart';
 import 'package:carwash/Features/profile_and_stander_wash/presentation/views/widgets/custom_items_settings.dart';
+import 'package:carwash/Features/profile_and_stander_wash/presentation/views/widgets/custom_profile_loading.dart';
 import 'package:carwash/Features/profile_and_stander_wash/presentation/views/widgets/custom_user_name.dart';
 import 'package:carwash/Features/profile_and_stander_wash/presentation/views/widgets/language_select_widget.dart';
 import 'package:carwash/constants.dart';
-import 'package:carwash/core/Utils/app_color.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
-import 'package:carwash/core/controllers/cubit/localizations_cubit.dart';
+import 'package:carwash/core/widgets/custom_fading_widget.dart';
 import 'package:carwash/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -60,7 +60,7 @@ class ProfileViewBody extends StatelessWidget {
                   ],
                 );
               }
-              return const Center(child: CircularProgressIndicator());
+              return const CustomProfileLoading();
             }),
             const CustomCarType(),
             const SizedBox(height: 20),

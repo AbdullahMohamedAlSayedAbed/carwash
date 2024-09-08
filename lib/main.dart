@@ -1,5 +1,5 @@
 import 'package:carwash/Features/appointment_promotions.dart/domin/entities/appointment_entity.dart';
-import 'package:carwash/Features/home/presentation/views/widgets/home_nav_bar_widget.dart';
+import 'package:carwash/Features/appointment_promotions.dart/domin/entities/promotions_entity.dart';
 import 'package:carwash/constants.dart';
 import 'package:carwash/core/Utils/app_color.dart';
 import 'package:carwash/core/Utils/app_route.dart';
@@ -23,10 +23,12 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await Hive.initFlutter();
-    Hive.registerAdapter(AppointmentEntityAdapter());
-     await Hive.openBox<AppointmentEntity>(kAppointmentBox);
+  Hive.registerAdapter(AppointmentEntityAdapter());
+  Hive.registerAdapter(PromotionsEntityAdapter());
+  await Hive.openBox<AppointmentEntity>(kAppointmentBox);
+  await Hive.openBox<PromotionsEntity>(kPromotionBox);
   setupGetit();
- await ShardPref.init();
+  await ShardPref.init();
   Bloc.observer = CustomBlocObserver();
   runApp(const CarWash());
 }

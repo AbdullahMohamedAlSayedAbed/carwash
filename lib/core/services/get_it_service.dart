@@ -13,12 +13,11 @@ void setupGetit() {
   getIt.registerSingleton<ProfileRepoImpl>(
     ProfileRepoImpl(databaseService: getIt<DatabaseService>()),
   );
-  getIt.registerSingleton<AppointmentRepoImpl>(
-    AppointmentRepoImpl(
+  getIt.registerSingleton<AppointmentAndPromotionRepoImpl>(
+    AppointmentAndPromotionRepoImpl(
       remoteDataSource:
           AppointmentRemoteDataSource(firestore: FireStoreService()),
       localDataSource: AppointmentLocalDataSourceImpl(),
     ),
   );
 }
-

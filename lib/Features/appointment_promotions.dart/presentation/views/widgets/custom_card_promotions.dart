@@ -1,22 +1,22 @@
-import 'package:carwash/Features/appointment_promotions.dart/domin/entities/appointment_entity.dart';
+import 'package:carwash/Features/appointment_promotions.dart/domin/entities/promotions_entity.dart';
 import 'package:carwash/Features/appointment_promotions.dart/presentation/views/widgets/custom_image_card.dart';
 import 'package:carwash/Features/home/presentation/views/widgets/custom_secondary_button.dart';
 import 'package:carwash/core/Utils/app_color.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
-class CustomCardAppointment extends StatelessWidget {
-  const CustomCardAppointment({
+class CustomCardPromotions extends StatelessWidget {
+  const CustomCardPromotions({
     super.key,
-    required this.appointmentEntity,
+    required this.promotionsEntity,
   });
-  final AppointmentEntity appointmentEntity;
+
+  final PromotionsEntity promotionsEntity;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Card(
-        clipBehavior: Clip.antiAlias,
         color: AppColors.primaryColor,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -32,7 +32,7 @@ class CustomCardAppointment extends StatelessWidget {
                   children: [
                     Flexible(
                       child: Text(
-                        appointmentEntity.name ?? "no name",
+                        promotionsEntity.name ?? "no name",
                         style:
                             AppStyles.style16w500.copyWith(color: Colors.white),
                         overflow: TextOverflow.ellipsis,
@@ -41,23 +41,43 @@ class CustomCardAppointment extends StatelessWidget {
                     ),
                     Flexible(
                       child: Text(
-                        "Number: ${appointmentEntity.number}",
-                        style:
-                            AppStyles.style14White,
+                        "Number: ${promotionsEntity.number}",
+                        style: AppStyles.style14White,
                         overflow: TextOverflow.ellipsis,
                         maxLines: 1,
                       ),
                     ),
-                    CustomSecondaryButton(text: "Book Now", onPressed: () {}),
+                    CustomSecondaryButton(text: "join now", onPressed: () {}),
                   ],
                 ),
               ),
               Column(
                 children: [
-                  CustomImageCard(image: appointmentEntity.image),
-                  Text(
-                    "Amount: ${appointmentEntity.price}\$",
-                    style: AppStyles.style20w700.copyWith(color: Colors.white),
+                  CustomImageCard(image: promotionsEntity.image),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Flexible(
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            "Amount: ${promotionsEntity.newPrice}\$\t",
+                            style: AppStyles.style18,
+                          ),
+                        ),
+                      ),
+                      Flexible(
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            "${promotionsEntity.oldPrice}\$",
+                            style: AppStyles.style18.copyWith(
+                                decorationThickness: 3,
+                                decoration: TextDecoration.lineThrough),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               )
