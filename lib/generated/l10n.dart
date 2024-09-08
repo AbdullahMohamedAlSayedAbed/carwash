@@ -441,6 +441,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Service`
+  String get Service {
+    return Intl.message(
+      'Service',
+      name: 'Service',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get Home {
+    return Intl.message(
+      'Home',
+      name: 'Home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Appointments`
+  String get Appointments {
+    return Intl.message(
+      'Appointments',
+      name: 'Appointments',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

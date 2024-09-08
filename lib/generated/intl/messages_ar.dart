@@ -23,6 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "AboutUs": MessageLookupByLibrary.simpleMessage("معلومات عنا"),
+        "Appointments": MessageLookupByLibrary.simpleMessage("المواعيد"),
         "CancelAppointment":
             MessageLookupByLibrary.simpleMessage("إلغاء الموعد"),
         "CarType": MessageLookupByLibrary.simpleMessage("نوع السيارة"),
@@ -33,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "EditProfile":
             MessageLookupByLibrary.simpleMessage("تعديل الملف الشخصي"),
         "Exterior": MessageLookupByLibrary.simpleMessage("الخارجية"),
+        "Home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "JoinNow": MessageLookupByLibrary.simpleMessage("انضم الآن"),
         "Location": MessageLookupByLibrary.simpleMessage("الموقع"),
         "LogOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
@@ -42,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Polish": MessageLookupByLibrary.simpleMessage("تلميع"),
         "Profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
         "Promotions": MessageLookupByLibrary.simpleMessage("العروض"),
+        "Service": MessageLookupByLibrary.simpleMessage("الخدمات"),
         "Settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
         "appLanguage": MessageLookupByLibrary.simpleMessage("لغة التطبيق"),
         "bookNow": MessageLookupByLibrary.simpleMessage("احجز الآن"),

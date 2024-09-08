@@ -38,5 +38,9 @@
     "EditAppointment":"Edit appointment",
     "CancelAppointment":"Cancel appointment",
     "standardWash":"Standard Wash",
-   "appLanguage":"App Language"
+   "appLanguage":"App Language",
+   "Service":"Service",
+   "Home":"Home",
+   "Appointments":"Appointments",
+   "Promotions":"Promotions"
 }

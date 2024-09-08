@@ -11,10 +11,11 @@ class GetProfileDataCubit extends Cubit<GetProfileDataState> {
   Future<void> getProfileData() async {
     emit(GetProfileDataLoading());
     try {
-  final userData = await profileRepo.getUserData(uid: 'AtdailTiRuXo7XGC09XB');
-  emit(GetProfileDataSuccess(userEntity: userData));
-}catch (e) {
-  emit(GetProfileDataFailure(e.toString()));
-}
+    final UserEntity   userData =
+          await profileRepo.getUserData(uid: 'AtdailTiRuXo7XGC09XB');
+      emit(GetProfileDataSuccess(userEntity: userData));
+    } catch (e) {
+      emit(GetProfileDataFailure(e.toString()));
+    }
   }
 }

@@ -24,7 +24,7 @@ class ProfileView extends StatelessWidget {
         ],
       ),
       body: BlocProvider(
-        create: (context) => GetProfileDataCubit(ProfileRepoImpl(databaseService: FireStoreService()))..getProfileData(),
+        create: (context) => GetProfileDataCubit(getIt<ProfileRepoImpl>())..getProfileData(),
         child: const ProfileViewBody(),
       ),
     );

@@ -1,6 +1,4 @@
 import 'package:carwash/Features/profile_and_stander_wash/presentation/views/widgets/standard_wash_view_body.dart';
-import 'package:carwash/Features/profile_and_stander_wash/presentation/views/widgets/custom_details_wash.dart';
-import 'package:carwash/constants.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
 import 'package:carwash/generated/l10n.dart';
 import 'package:flutter/material.dart';

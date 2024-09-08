@@ -28,7 +28,7 @@ abstract class AppRoute {
 
       case profile:
         return MaterialPageRoute(builder: (context) => const ProfileView());
-      case 'standardWash':
+      case standardWash:
         return MaterialPageRoute(builder: (context) => const StandardWashView());
 
       case service:

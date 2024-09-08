@@ -38,5 +38,9 @@
     "EditAppointment": "تعديل الموعد",
     "CancelAppointment": "إلغاء الموعد",
     "standardWash": "غسيل قياسي",
-    "appLanguage":"لغة التطبيق"
+    "appLanguage":"لغة التطبيق",
+    "Service":"الخدمات",
+    "Home":"الرئيسية",
+    "Appointments":"المواعيد",
+    "Promotions":"العروض"
 }

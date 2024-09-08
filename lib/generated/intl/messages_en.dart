@@ -23,6 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "AboutUs": MessageLookupByLibrary.simpleMessage("About us"),
+        "Appointments": MessageLookupByLibrary.simpleMessage("Appointments"),
         "CancelAppointment":
             MessageLookupByLibrary.simpleMessage("Cancel appointment"),
         "CarType": MessageLookupByLibrary.simpleMessage("Car Type"),
@@ -33,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Edit appointment"),
         "EditProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
         "Exterior": MessageLookupByLibrary.simpleMessage("Exterior"),
+        "Home": MessageLookupByLibrary.simpleMessage("Home"),
         "JoinNow": MessageLookupByLibrary.simpleMessage("Join now"),
         "Location": MessageLookupByLibrary.simpleMessage("Location"),
         "LogOut": MessageLookupByLibrary.simpleMessage("Log Out"),
@@ -42,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Polish": MessageLookupByLibrary.simpleMessage("Polish"),
         "Profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "Promotions": MessageLookupByLibrary.simpleMessage("Promotions"),
+        "Service": MessageLookupByLibrary.simpleMessage("Service"),
         "Settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "appLanguage": MessageLookupByLibrary.simpleMessage("App Language"),
         "bookNow": MessageLookupByLibrary.simpleMessage("Book Now"),

@@ -1,4 +1,6 @@
+import 'package:carwash/Features/appointment_promotions.dart/domin/entities/appointment_entity.dart';
 import 'package:carwash/Features/home/presentation/views/widgets/home_nav_bar_widget.dart';
+import 'package:carwash/constants.dart';
 import 'package:carwash/core/Utils/app_color.dart';
 import 'package:carwash/core/Utils/app_route.dart';
 import 'package:carwash/core/controllers/cubit/localizations_cubit.dart';
@@ -10,6 +12,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
 
 import 'core/services/custom_bloc_observer.dart';
@@ -19,7 +22,9 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
+  await Hive.initFlutter();
+    Hive.registerAdapter(AppointmentEntityAdapter());
+     await Hive.openBox<AppointmentEntity>(kAppointmentBox);
   setupGetit();
  await ShardPref.init();
   Bloc.observer = CustomBlocObserver();

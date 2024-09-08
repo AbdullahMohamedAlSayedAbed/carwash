@@ -1,3 +1,5 @@
+import 'package:carwash/Features/appointment_promotions.dart/presentation/views/appointment_view.dart';
+import 'package:carwash/Features/appointment_promotions.dart/presentation/views/promotions_view.dart';
 import 'package:carwash/Features/home/data/models/appointment_model.dart';
 import 'package:carwash/Features/home/presentation/views/about_us_view.dart';
 import 'package:carwash/Features/home/presentation/views/widgets/custom_text_field.dart';
@@ -62,6 +64,11 @@ class HomeViewBody extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (context) => const AboutUsView()));
+                  }else{
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const PromotionsView()));
                   }
                 },
                 child: YourAppointmentWidget(
