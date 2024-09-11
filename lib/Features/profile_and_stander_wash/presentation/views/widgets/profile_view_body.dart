@@ -8,7 +8,6 @@ import 'package:carwash/Features/profile_and_stander_wash/presentation/views/wid
 import 'package:carwash/Features/profile_and_stander_wash/presentation/views/widgets/language_select_widget.dart';
 import 'package:carwash/constants.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
-import 'package:carwash/core/widgets/custom_fading_widget.dart';
 import 'package:carwash/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
