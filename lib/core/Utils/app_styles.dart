@@ -34,4 +34,8 @@ abstract class AppStyles {
     fontSize: 14,
     color: Colors.grey,
   );
+  static const styleBold16 = TextStyle(
+      fontSize: 16, color: AppColors.primaryColor, fontWeight: FontWeight.bold);
+  static const paymentStyle =
+      TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold);
 }

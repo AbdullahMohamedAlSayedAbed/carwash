@@ -2,7 +2,8 @@ import 'package:carwash/Features/home/presentation/views/about_us_view.dart';
 import 'package:carwash/Features/home/presentation/views/home_view.dart';
 import 'package:carwash/Features/home/presentation/views/widgets/home_nav_bar_widget.dart';
 import 'package:carwash/Features/profile_and_stander_wash/presentation/views/standard_wash_view.dart';
-import 'package:carwash/Features/services/presentation/views/services_view.dart';
+import 'package:carwash/Features/services/presentation/views/information_screen.dart';
+import 'package:carwash/Features/services/presentation/views/payment_method_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../Features/profile_and_stander_wash/presentation/views/profile_view.dart';
@@ -14,6 +15,8 @@ abstract class AppRoute {
   static const aboutUs = 'aboutUs';
   static const service = 'service';
   static const standardWash = 'standardWash';
+  static const informationScreen = 'informationScreen';
+  static const paymentMethodScreen = 'paymentMethodScreen';
 
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -29,10 +32,16 @@ abstract class AppRoute {
       case profile:
         return MaterialPageRoute(builder: (context) => const ProfileView());
       case 'standardWash':
-        return MaterialPageRoute(builder: (context) => const StandardWashView());
+        return MaterialPageRoute(
+            builder: (context) => const StandardWashView());
 
-      case service:
-        return MaterialPageRoute(builder: (context) => const ServicesView());
+      case informationScreen:
+        return MaterialPageRoute(
+            builder: (context) => const InformationScreen());
+      case paymentMethodScreen:
+        return MaterialPageRoute(
+            builder: (context) => const PaymentMethodScreen());
+
       default:
         return MaterialPageRoute(builder: (context) => const Scaffold());
     }

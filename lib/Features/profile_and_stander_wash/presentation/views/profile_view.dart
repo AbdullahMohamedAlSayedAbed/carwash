@@ -4,7 +4,6 @@ import 'package:carwash/Features/profile_and_stander_wash/presentation/controlle
 import 'package:carwash/Features/profile_and_stander_wash/presentation/views/widgets/profile_view_body.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
 import 'package:carwash/core/services/firestore_service.dart';
-import 'package:carwash/core/services/get_it_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -23,7 +22,9 @@ class ProfileView extends StatelessWidget {
         ],
       ),
       body: BlocProvider(
-        create: (context) => GetProfileDataCubit(ProfileRepoImpl(databaseService: FireStoreService()))..getProfileData(),
+        create: (context) => GetProfileDataCubit(
+            ProfileRepoImpl(databaseService: FireStoreService()))
+          ..getProfileData(),
         child: const ProfileViewBody(),
       ),
     );

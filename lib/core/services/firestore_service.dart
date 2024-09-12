@@ -14,6 +14,7 @@ class FireStoreService implements DatabaseService {
     return data.data() as Map<String, dynamic>;
   }
 
+  @override
   Future<List<Map<String, dynamic>>> fetchDataFromFirebase(
       String collectionPath) async {
     try {

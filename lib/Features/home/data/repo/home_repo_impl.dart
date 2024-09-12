@@ -1,7 +1,6 @@
 import 'package:carwash/Features/home/domin/repos/home_repo.dart';
 import 'package:carwash/core/error/failures.dart';
 import 'package:carwash/core/services/firestore_service.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dartz/dartz.dart';
 
 class HomeRepoImpl extends HomeRepo {
