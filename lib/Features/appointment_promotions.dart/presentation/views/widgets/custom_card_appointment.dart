@@ -1,6 +1,7 @@
 import 'package:carwash/Features/appointment_promotions.dart/domin/entities/appointment_entity.dart';
 import 'package:carwash/Features/appointment_promotions.dart/presentation/views/widgets/custom_image_card.dart';
 import 'package:carwash/Features/home/presentation/views/widgets/custom_secondary_button.dart';
+import 'package:carwash/Features/services/presentation/views/payment_method_screen.dart';
 import 'package:carwash/core/Utils/app_color.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
 import 'package:flutter/material.dart';
@@ -42,13 +43,20 @@ class CustomCardAppointment extends StatelessWidget {
                     Flexible(
                       child: Text(
                         "Number: ${appointmentEntity.number}",
-                        style:
-                            AppStyles.style14White,
+                        style: AppStyles.style14White,
                         overflow: TextOverflow.ellipsis,
                         maxLines: 1,
                       ),
                     ),
-                    CustomSecondaryButton(text: "Book Now", onPressed: () {}),
+                    CustomSecondaryButton(
+                        text: "Book Now",
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => PaymentMethodScreen(
+                                      price: appointmentEntity.price)));
+                        }),
                   ],
                 ),
               ),
