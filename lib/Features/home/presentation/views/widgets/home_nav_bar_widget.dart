@@ -1,5 +1,5 @@
 import 'package:carwash/Features/home/presentation/views/home_view.dart';
-import 'package:carwash/Features/services/presentation/views/services_view.dart';
+import 'package:carwash/Features/services/presentation/views/service_screen.dart';
 import 'package:carwash/core/Utils/app_color.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
 import 'package:carwash/generated/l10n.dart';
@@ -34,7 +34,7 @@ class HomeNavBarWidget extends StatelessWidget {
 List<Widget> _buildScreens() {
   return [
     const HomeView(),
-    const ServicesView(),
+    const ServicesScreen(),
     const ProfileView(),
   ];
 }

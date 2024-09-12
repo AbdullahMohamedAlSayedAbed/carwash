@@ -18,10 +18,13 @@ abstract class AppStyles {
     color: AppColors.primaryColor,
   );
   static const style16w500 = TextStyle(
+      fontSize: 16, fontWeight: FontWeight.w500, color: AppColors.primaryColor);
+  static const styleBold16 = TextStyle(
     fontSize: 16,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.bold,
     color: Colors.grey,
   );
+
   static const style18 = TextStyle(
     fontSize: 18,
     color: Colors.white,
