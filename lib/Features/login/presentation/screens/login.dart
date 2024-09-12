@@ -1,4 +1,5 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:carwash/Features/home/presentation/views/home_view.dart';
 import 'package:carwash/Features/login/data/datasource/firebase_datasource.dart';
 import 'package:carwash/Features/login/data/reposotries/user_repository_impl.dart';
 import 'package:carwash/Features/login/presentation/cubit/intro_state/login_validator_cubit.dart';
@@ -8,7 +9,6 @@ import 'package:carwash/Features/login/presentation/cubit/login/login_cubit.dart
 import 'package:carwash/Features/login/presentation/cubit/login/login_state.dart';
 import 'package:carwash/Features/login/presentation/cubit/login/reset_password/resetpassword_cubit.dart';
 import 'package:carwash/Features/login/presentation/screens/car_type.dart';
-import 'package:carwash/Features/login/presentation/screens/home_test.dart';
 import 'package:carwash/Features/login/presentation/screens/sign_up.dart';
 import 'package:carwash/Features/login/presentation/widgets/blububle.dart';
 import 'package:carwash/Features/login/presentation/widgets/button_weidget.dart';
@@ -16,11 +16,9 @@ import 'package:carwash/Features/login/presentation/widgets/custome_text_feild.d
 import 'package:carwash/Features/login/presentation/widgets/forget_password.dart';
 import 'package:carwash/Features/login/presentation/widgets/small_text_weidget.dart';
 import 'package:carwash/Features/login/presentation/widgets/text.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -64,7 +62,7 @@ class _LoginState extends State<Login> {
             } else {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => const HomeTest()),
+                MaterialPageRoute(builder: (context) => const HomeView()),
               );
             }
           } else if (state is SignInWithFacebookSuccess) {
@@ -76,18 +74,18 @@ class _LoginState extends State<Login> {
             } else {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => const HomeTest()),
+                MaterialPageRoute(builder: (context) => const HomeView()),
               );
             }
           } else if (state is SignInWithEmailSuccess) {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => const HomeTest()),
+              MaterialPageRoute(builder: (context) => const HomeView()),
             );
           } else if (state is SignInWithFacebookSuccess) {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => const HomeTest()),
+              MaterialPageRoute(builder: (context) => const HomeView()),
             );
           } else if (state is SignInFailure) {
             AwesomeDialog(

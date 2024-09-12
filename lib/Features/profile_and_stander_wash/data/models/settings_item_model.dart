@@ -4,7 +4,8 @@ class SettingsItemModel {
   final Color? backgroundColor;
   final String text;
   final IconData icon;
+  final void Function()? onTap;
 
-   SettingsItemModel(
-      {required this.backgroundColor, required this.text, required this.icon});
+  SettingsItemModel(
+      {this.onTap, required this.backgroundColor, required this.text, required this.icon});
 }

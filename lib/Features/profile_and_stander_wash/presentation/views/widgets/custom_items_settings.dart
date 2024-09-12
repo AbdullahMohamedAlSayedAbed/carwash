@@ -11,18 +11,21 @@ class CustomItemsSettings extends StatelessWidget {
   final SettingsItemModel item;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 15),
-      child: Row(
-        children: [
-          CircleAvatar(
-            backgroundColor: item.backgroundColor,
-            child: Icon(item.icon, color: Colors.white),
-          ),
-          const SizedBox(width: 10),
-          Text(item.text,
-              style: AppStyles.style16w500.copyWith(color: Colors.black)),
-        ],
+    return GestureDetector(
+      onTap: item.onTap,
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 15),
+        child: Row(
+          children: [
+            CircleAvatar(
+              backgroundColor: item.backgroundColor,
+              child: Icon(item.icon, color: Colors.white),
+            ),
+            const SizedBox(width: 10),
+            Text(item.text,
+                style: AppStyles.style16w500.copyWith(color: Colors.black)),
+          ],
+        ),
       ),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:carwash/Features/login/presentation/screens/login.dart';
 import 'package:carwash/Features/profile_and_stander_wash/data/models/settings_item_model.dart';
 import 'package:carwash/Features/profile_and_stander_wash/presentation/controllers/cubit/get_profile_data_cubit.dart';
 import 'package:carwash/Features/profile_and_stander_wash/presentation/views/widgets/custom_car_type.dart';
@@ -9,6 +10,7 @@ import 'package:carwash/Features/profile_and_stander_wash/presentation/views/wid
 import 'package:carwash/constants.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
 import 'package:carwash/generated/l10n.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -18,9 +20,10 @@ class ProfileViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<SettingsItemModel> items = [
       SettingsItemModel(
-          backgroundColor: Colors.blue,
-          text: S.of(context).EditProfile,
-          icon: Icons.edit),
+        backgroundColor: Colors.blue,
+        text: S.of(context).EditProfile,
+        icon: Icons.edit,
+      ),
       SettingsItemModel(
           backgroundColor: Colors.blue,
           text: S.of(context).PaymentInformation,
@@ -30,9 +33,18 @@ class ProfileViewBody extends StatelessWidget {
           text: S.of(context).LoyaltyClub,
           icon: Icons.loyalty),
       SettingsItemModel(
-          backgroundColor: Colors.red,
-          text: S.of(context).LogOut,
-          icon: Icons.logout),
+        backgroundColor: Colors.red,
+        text: S.of(context).LogOut,
+        icon: Icons.logout,
+        onTap: () async {
+          await FirebaseAuth.instance.signOut();
+
+          Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(builder: (context) => const Login()),
+            (Route<dynamic> route) => false,
+          );
+        },
+      ),
     ];
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
