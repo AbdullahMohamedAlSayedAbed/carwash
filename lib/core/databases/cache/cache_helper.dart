@@ -1,11 +1,10 @@
-
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CacheHelper {
- static late SharedPreferences sharedPreferences;
+  static late SharedPreferences sharedPreferences;
 
 //! Here The Initialize of cache .
-  init() async {
+  static Future<void> init() async {
     sharedPreferences = await SharedPreferences.getInstance();
   }
 
@@ -54,6 +53,17 @@ class CacheHelper {
 //! clear all data in the local database
   Future<bool> clearData() async {
     return await sharedPreferences.clear();
+  }
+
+  static Future<bool> isIntroShown() async {
+    bool? isShown = sharedPreferences.getBool('isIntroShown') ?? false;
+    print("Is intro shown: $isShown");
+    return isShown;
+  }
+
+  static Future<void> setIntroShown() async {
+    await sharedPreferences.setBool('isIntroShown', true);
+    print("Intro shown set to true");
   }
 
 //! this method to put data in local database using key
