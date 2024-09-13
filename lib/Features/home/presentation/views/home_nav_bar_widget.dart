@@ -8,15 +8,32 @@ import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
 import '../../../profile_and_stander_wash/presentation/views/profile_view.dart';
 
-PersistentTabController _controller = PersistentTabController();
-
-class HomeNavBarWidget extends StatelessWidget {
+class HomeNavBarWidget extends StatefulWidget {
   const HomeNavBarWidget({super.key});
 
   @override
+  State<HomeNavBarWidget> createState() => _HomeNavBarWidgetState();
+}
+
+class _HomeNavBarWidgetState extends State<HomeNavBarWidget> {
+ late final PersistentTabController _controller;
+  @override
+  void initState() {
+    super.initState();
+    _controller = PersistentTabController(initialIndex: 0);
+  }
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+  @override
   Widget build(BuildContext context) {
     return PersistentTabView(
+
       context,
+
+      
       screens: _buildScreens(),
       items: _navBarsItems(context),
       controller: _controller,

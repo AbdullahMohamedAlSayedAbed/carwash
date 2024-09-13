@@ -8,9 +8,11 @@ import 'package:carwash/Features/login/presentation/cubit/intro_state/login_vali
 import 'package:carwash/Features/login/presentation/cubit/login/reset_password/resetpassword_cubit.dart';
 import 'package:carwash/Features/login/presentation/cubit/sign_up/sign_up_cubit.dart';
 import 'package:carwash/Features/login/presentation/screens/intro.dart';
+import 'package:carwash/Features/login/presentation/screens/login.dart';
 import 'package:carwash/constants.dart';
 import 'package:carwash/core/Utils/app_color.dart';
 import 'package:carwash/core/controllers/cubit/localizations_cubit.dart';
+import 'package:carwash/core/databases/cache/cache_helper.dart';
 import 'package:carwash/core/services/get_it_service.dart';
 import 'package:carwash/core/services/shard_pref.dart';
 import 'package:carwash/firebase_options.dart';
@@ -36,6 +38,7 @@ void main() async {
   await Hive.openBox<PromotionsEntity>(kPromotionBox);
   setupGetit();
   await ShardPref.init();
+  await CacheHelper.init();
   Bloc.observer = CustomBlocObserver();
   runApp(const CarWash());
 }

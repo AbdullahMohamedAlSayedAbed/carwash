@@ -48,7 +48,7 @@ abstract class ShardPref {
     return sharedPreferences.containsKey(key);
   }
 
-  static Future<bool> clearData({required String key}) async {
+  static Future<bool> clearData() async {
     return sharedPreferences.clear();
   }
 

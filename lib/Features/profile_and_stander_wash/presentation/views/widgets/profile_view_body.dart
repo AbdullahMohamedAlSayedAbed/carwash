@@ -1,6 +1,7 @@
 import 'package:carwash/Features/login/presentation/screens/login.dart';
 import 'package:carwash/Features/profile_and_stander_wash/data/models/settings_item_model.dart';
 import 'package:carwash/Features/profile_and_stander_wash/presentation/controllers/cubit/get_profile_data_cubit.dart';
+import 'package:carwash/Features/profile_and_stander_wash/presentation/views/standard_wash_view.dart';
 import 'package:carwash/Features/profile_and_stander_wash/presentation/views/widgets/custom_car_type.dart';
 import 'package:carwash/Features/profile_and_stander_wash/presentation/views/widgets/custom_image_profile.dart';
 import 'package:carwash/Features/profile_and_stander_wash/presentation/views/widgets/custom_items_settings.dart';
@@ -27,7 +28,14 @@ class ProfileViewBody extends StatelessWidget {
       SettingsItemModel(
           backgroundColor: Colors.blue,
           text: S.of(context).PaymentInformation,
-          icon: Icons.payment),
+          icon: Icons.payment,
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return const StandardWashView();
+            }));
+          },
+          ),
+          
       SettingsItemModel(
           backgroundColor: Colors.yellow,
           text: S.of(context).LoyaltyClub,
@@ -38,7 +46,6 @@ class ProfileViewBody extends StatelessWidget {
         icon: Icons.logout,
         onTap: () async {
           await FirebaseAuth.instance.signOut();
-
           Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(builder: (context) => const Login()),
             (Route<dynamic> route) => false,
@@ -74,9 +81,7 @@ class ProfileViewBody extends StatelessWidget {
                         ),
                       ],
                     ),
-                    CustomCarType(
-                      carType: state.userEntity.carType ?? 'Coupe'
-                    ),
+                    CustomCarType(carType: state.userEntity.carType ?? 'Coupe'),
                   ],
                 );
               }
