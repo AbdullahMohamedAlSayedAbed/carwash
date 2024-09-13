@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 
 class CustomCarType extends StatelessWidget {
   const CustomCarType({
-    super.key,
+    super.key, required this.carType,
   });
-
+  final String carType;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -31,7 +31,7 @@ class CustomCarType extends StatelessWidget {
               height: 60,
             ),
             const SizedBox(width: 10),
-            Text('Coupe',
+            Text(carType,
                 style: AppStyles.style18.copyWith(color: Colors.grey)),
             const Spacer(),
             CustomSecondaryButton(text: S.of(context).Change, onPressed: () {}),
