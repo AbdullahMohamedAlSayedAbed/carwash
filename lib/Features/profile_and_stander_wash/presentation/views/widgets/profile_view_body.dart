@@ -62,11 +62,11 @@ class ProfileViewBody extends StatelessWidget {
               if (state is GetProfileDataSuccess) {
                 return Row(
                   children: [
-                    CustomImageProfile(image: state.userEntity.image),
+                    CustomImageProfile(image: state.userEntity.image??'https://firebasestorage.googleapis.com/v0/b/carwashapp-df53b.appspot.com/o/person.jpeg?alt=media&token=0782b8c5-6e76-4f80-a163-3a55ddb650d9'),
                     const SizedBox(width: 10),
                     CustomUserName(
-                      email: state.userEntity.email,
-                      name: state.userEntity.name,
+                      email: state.userEntity.email??'ali@ali.com',
+                      name: state.userEntity.name??'ali',
                     ),
                   ],
                 );

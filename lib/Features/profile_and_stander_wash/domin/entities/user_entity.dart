@@ -1,10 +1,11 @@
 class UserEntity {
-  final String name;
-  final String email;
-  final String uId;
-  final String image;
+  final String? name;
+  final String? email;
+  final String? uId;
+  final String? image;
+  final String? carType;
 
-  UserEntity( {required this.image,required this.name, required this.email, required this.uId});
+  UserEntity(  {this.carType, this.image, this.name,  this.email,  this.uId});
 
 
 
@@ -13,7 +14,8 @@ class UserEntity {
       'name': name,
       'email': email,
       'uId': uId,
-      'image': image
+      'image': image,
+      'carType': carType,
     };
   }
 

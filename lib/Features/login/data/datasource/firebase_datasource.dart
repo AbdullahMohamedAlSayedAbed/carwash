@@ -35,6 +35,7 @@ class FirebaseDataSource {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       await prefs.setString('tempUsername', username);
       await prefs.setString('uid', userCredential.user!.uid);
+      await prefs.setString('emailUser', userCredential.user!.email!);
     } catch (e) {
       throw Exception('Failed to sign up: $e');
     }
@@ -45,14 +46,12 @@ class FirebaseDataSource {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       String? uid = prefs.getString('uid');
       String? username = prefs.getString('tempUsername');
+      String? emailUser = prefs.getString('emailUser');
       if (uid != null && username != null) {
         await _firestore
             .collection('user')
             .doc(uid)
-            .set({'username': username, 'carType': carType, 'uid': uid});
-
-        await prefs.remove('tempUsername');
-        await prefs.remove('uid');
+            .set({'username': username,'email': emailUser, 'carType': carType, 'uid': uid});
       } else {
         throw Exception('No user ID found in SharedPreferences');
       }

@@ -1,4 +1,5 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:carwash/Features/home/presentation/views/home_nav_bar_widget.dart';
 import 'package:carwash/Features/home/presentation/views/home_view.dart';
 import 'package:carwash/Features/login/data/datasource/firebase_datasource.dart';
 import 'package:carwash/Features/login/data/reposotries/user_repository_impl.dart';
@@ -62,7 +63,7 @@ class _LoginState extends State<Login> {
             } else {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => const HomeView()),
+                MaterialPageRoute(builder: (context) => const HomeNavBarWidget()),
               );
             }
           } else if (state is SignInWithFacebookSuccess) {
@@ -74,18 +75,18 @@ class _LoginState extends State<Login> {
             } else {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => const HomeView()),
+                MaterialPageRoute(builder: (context) => const HomeNavBarWidget()),
               );
             }
           } else if (state is SignInWithEmailSuccess) {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => const HomeView()),
+              MaterialPageRoute(builder: (context) => const HomeNavBarWidget()),
             );
           } else if (state is SignInWithFacebookSuccess) {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => const HomeView()),
+              MaterialPageRoute(builder: (context) => const HomeNavBarWidget()),
             );
           } else if (state is SignInFailure) {
             AwesomeDialog(

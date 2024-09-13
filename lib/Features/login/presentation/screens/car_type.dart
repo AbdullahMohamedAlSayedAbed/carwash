@@ -1,4 +1,4 @@
-import 'package:carwash/Features/home/presentation/views/home_view.dart';
+import 'package:carwash/Features/home/presentation/views/home_nav_bar_widget.dart';
 import 'package:carwash/Features/login/presentation/widgets/blububle.dart';
 import 'package:carwash/Features/login/presentation/widgets/button_weidget.dart';
 import 'package:carwash/Features/login/presentation/widgets/small_text_weidget.dart';
@@ -10,7 +10,6 @@ import 'package:carwash/Features/login/presentation/cubit/getcars/getcars_cubit.
 import 'package:carwash/Features/login/presentation/cubit/getcars/getcars_state.dart';
 import 'package:carwash/Features/login/presentation/cubit/sign_up/sign_up_cubit.dart';
 import 'package:carwash/Features/login/presentation/cubit/sign_up/sign_up_state.dart';
-import 'package:carwash/Features/login/presentation/screens/home_test.dart'; // صفحة HomeTest التي سيتم الانتقال إليها
 
 class CarType extends StatefulWidget {
   const CarType({super.key});
@@ -163,7 +162,7 @@ class _CarTypeState extends State<CarType> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const HomeView(),
+                              builder: (context) => const HomeNavBarWidget(),
                             ),
                           );
                         } else if (state is SignUpFailure) {
