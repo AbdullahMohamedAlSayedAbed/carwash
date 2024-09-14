@@ -1,6 +1,8 @@
 import 'package:carwash/Features/appointment_promotions.dart/domin/entities/appointment_entity.dart';
 import 'package:carwash/Features/appointment_promotions.dart/domin/entities/promotions_entity.dart';
+import 'package:carwash/Features/services/presentation/views/payment_method_screen.dart';
 import 'package:carwash/constants.dart';
+import 'package:carwash/core/Utils/api_keys.dart';
 import 'package:carwash/core/Utils/app_color.dart';
 import 'package:carwash/core/Utils/app_route.dart';
 import 'package:carwash/core/controllers/cubit/localizations_cubit.dart';
@@ -12,6 +14,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
 
@@ -22,6 +25,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  Stripe.publishableKey = ApiKeys.publishKey;
   await Hive.initFlutter();
   Hive.registerAdapter(AppointmentEntityAdapter());
   Hive.registerAdapter(PromotionsEntityAdapter());
@@ -58,8 +62,9 @@ class CarWash extends StatelessWidget {
                 seedColor: AppColors.primaryColor,
               ),
             ),
-            onGenerateRoute: AppRoute.onGenerateRoute,
-            initialRoute: AppRoute.homeNavBar,
+            home: const PaymentMethodScreen(),
+            // onGenerateRoute: AppRoute.onGenerateRoute,
+            // initialRoute: AppRoute.homeNavBar,
           );
         },
       ),
