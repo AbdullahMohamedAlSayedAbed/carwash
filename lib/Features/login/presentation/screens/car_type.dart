@@ -9,7 +9,7 @@ import 'package:carwash/Features/login/presentation/cubit/getcars/getcars_cubit.
 import 'package:carwash/Features/login/presentation/cubit/getcars/getcars_state.dart';
 import 'package:carwash/Features/login/presentation/cubit/sign_up/sign_up_cubit.dart';
 import 'package:carwash/Features/login/presentation/cubit/sign_up/sign_up_state.dart';
-import 'package:carwash/Features/login/presentation/screens/home_test.dart'; // صفحة HomeTest التي سيتم الانتقال إليها
+import 'package:carwash/Features/login/presentation/screens/home_test.dart'; 
 
 class CarType extends StatefulWidget {
   const CarType({super.key});

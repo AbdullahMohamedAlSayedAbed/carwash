@@ -6,9 +6,11 @@ import 'package:carwash/Features/login/presentation/cubit/intro_state/login_vali
 import 'package:carwash/Features/login/presentation/cubit/intro_state/splash_cubit.dart';
 import 'package:carwash/Features/login/presentation/cubit/intro_state/splash_state.dart';
 import 'package:carwash/Features/login/presentation/cubit/login/reset_password/resetpassword_cubit.dart';
+import 'package:carwash/Features/login/presentation/cubit/rememberme/remember_me_cubit.dart';
 import 'package:carwash/Features/login/presentation/cubit/sign_up/sign_up_cubit.dart';
 import 'package:carwash/Features/login/presentation/screens/intro.dart';
 import 'package:carwash/Features/login/presentation/screens/login.dart';
+import 'package:carwash/Features/login/presentation/screens/home_test.dart';
 import 'package:carwash/core/Utils/app_color.dart';
 import 'package:carwash/core/controllers/cubit/localizations_cubit.dart';
 import 'package:carwash/core/databases/cache/cache_helper.dart';
@@ -18,16 +20,23 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   await CacheHelper.init();
-  runApp(const CarWash());
+
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  bool isLoggedIn = prefs.containsKey('email') && prefs.containsKey('password');
+
+  runApp(CarWash(isLoggedIn: isLoggedIn));
 }
 
 class CarWash extends StatelessWidget {
-  const CarWash({super.key});
+  final bool isLoggedIn;
+
+  const CarWash({required this.isLoggedIn, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -56,46 +65,33 @@ class CarWash extends StatelessWidget {
           create: (context) => ResetPasswordCubit(
               UserRepositoryImpl(firebaseDataSource: FirebaseDataSource())),
         ),
+        BlocProvider<RememberMeCubit>(
+          create: (context) => RememberMeCubit(),
+        ),
       ],
       child: BlocBuilder<LocalizationsCubit, Locale>(
         builder: (context, localeState) {
-          return BlocBuilder<SplashCubit, SplashState>(
-            builder: (context, splashState) {
-              return MaterialApp(
-                locale: localeState,
-                localizationsDelegates: const [
-                  S.delegate,
-                  GlobalMaterialLocalizations.delegate,
-                  GlobalWidgetsLocalizations.delegate,
-                  GlobalCupertinoLocalizations.delegate,
-                ],
-                supportedLocales: S.delegate.supportedLocales,
-                debugShowCheckedModeBanner: false,
-                theme: ThemeData(
-                  primaryColor: AppColors.primaryColor,
-                  colorScheme: ColorScheme.fromSeed(
-                    seedColor: AppColors.primaryColor,
-                  ),
-                ),
-                home: _getHome(splashState),
-              );
-            },
+          return MaterialApp(
+            locale: localeState,
+            localizationsDelegates: const [
+              S.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: S.delegate.supportedLocales,
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              primaryColor: AppColors.primaryColor,
+              colorScheme: ColorScheme.fromSeed(
+                seedColor: AppColors.primaryColor,
+              ),
+            ),
+            home: isLoggedIn ? const HomeTest() : const Intro(),
           );
         },
       ),
     );
-  }
-
-  Widget _getHome(SplashState state) {
-    if (state is SplashIntro) {
-      return const Intro();
-    } else if (state is SplashLogin) {
-      return Login();
-    } else {
-      return const Center(
-        child: CircularProgressIndicator(),
-      );
-    }
   }
 }
 

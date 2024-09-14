@@ -14,6 +14,7 @@ import 'package:carwash/Features/login/presentation/widgets/blububle.dart';
 import 'package:carwash/Features/login/presentation/widgets/button_weidget.dart';
 import 'package:carwash/Features/login/presentation/widgets/custome_text_feild.dart';
 import 'package:carwash/Features/login/presentation/widgets/forget_password.dart';
+import 'package:carwash/Features/login/presentation/widgets/remember_me.dart';
 import 'package:carwash/Features/login/presentation/widgets/small_text_weidget.dart';
 import 'package:carwash/Features/login/presentation/widgets/text.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -33,6 +34,7 @@ class _LoginState extends State<Login> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  bool rememberMe = false;
 
   @override
   Widget build(BuildContext context) {
@@ -263,16 +265,12 @@ class _LoginState extends State<Login> {
                                                       MainAxisAlignment
                                                           .spaceBetween,
                                                   children: [
-                                                    Row(
-                                                      children: [
-                                                        Checkbox(
-                                                          value: false,
-                                                          onChanged:
-                                                              (newValue) {},
-                                                        ),
-                                                        const Text(
-                                                            "Remember me"),
-                                                      ],
+                                                    Rememberme(
+                                                      email:
+                                                          emailController.text,
+                                                      password:
+                                                          passwordController
+                                                              .text,
                                                     ),
                                                     GestureDetector(
                                                       onTap: () {
