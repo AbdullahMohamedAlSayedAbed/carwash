@@ -1,5 +1,5 @@
-import 'package:carwash/Features/home/presentation/controllers/cubit/services_item_cubit.dart';
-import 'package:carwash/Features/home/presentation/controllers/cubit/services_item_state.dart';
+import 'package:carwash/Features/home/presentation/controllers/service_item_cubit/services_item_cubit.dart';
+import 'package:carwash/Features/home/presentation/controllers/service_item_cubit/services_item_state.dart';
 import 'package:carwash/Features/home/presentation/views/widgets/featured_service_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

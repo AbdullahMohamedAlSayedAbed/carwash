@@ -2,11 +2,12 @@ import 'package:carwash/Features/appointment_promotions.dart/presentation/views/
 import 'package:carwash/Features/appointment_promotions.dart/presentation/views/promotions_view.dart';
 import 'package:carwash/Features/home/data/models/Services_item_model.dart';
 import 'package:carwash/Features/home/data/models/appointment_model.dart';
-import 'package:carwash/Features/home/presentation/controllers/cubit/services_item_cubit.dart';
+import 'package:carwash/Features/home/presentation/controllers/service_item_cubit/services_item_cubit.dart';
 import 'package:carwash/Features/home/presentation/views/about_us_view.dart';
-import 'package:carwash/Features/home/presentation/views/widgets/custom_text_field.dart';
-import 'package:carwash/Features/home/presentation/views/widgets/featured_service_widget.dart';
+import 'package:carwash/Features/home/presentation/views/widgets/custom_notifications_icon_button.dart';
+import 'package:carwash/Features/home/presentation/views/widgets/search_service_widget.dart';
 import 'package:carwash/Features/home/presentation/views/widgets/your_appointment_widget.dart';
+import 'package:carwash/Features/profile_and_stander_wash/presentation/controllers/cubit/get_profile_data_cubit.dart';
 import 'package:carwash/constants.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
 import 'package:carwash/generated/l10n.dart';
@@ -35,7 +36,7 @@ class HomeViewBody extends StatelessWidget {
           buttonText: S.of(context).bookNow,
           image: 'assets/images/car.webp'),
     ];
-        final List<ServicesItemModel> initialItems = [
+    final List<ServicesItemModel> initialItems = [
       ServicesItemModel(
           image: 'assets/images/exterior.jpeg', title: S.of(context).Exterior),
       ServicesItemModel(
@@ -48,7 +49,26 @@ class HomeViewBody extends StatelessWidget {
       ServicesItemModel(
           image: 'assets/images/tyre_wash.jpeg', title: S.of(context).tyreWash),
     ];
-    return BlocProvider(
+    return Scaffold(
+     appBar: AppBar(
+          title: BlocBuilder<GetProfileDataCubit, GetProfileDataState>(
+            builder: (context, state) {
+              if (state is GetProfileDataFailure) {
+                return Text("${S.of(context).hey} no Name");
+              }
+
+              if (state is GetProfileDataSuccess) {
+                return Text("${S.of(context).hey} ${state.userEntity.name}");
+              } else {
+                return Text("${S.of(context).hey} name loading");
+              }
+            },
+          ),
+          actions: const [
+            CustomNotificationsIconButton(),
+          ],
+        ),
+      body:BlocProvider(
       create: (context) => ServicesItemCubit(initialItems),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
@@ -92,50 +112,7 @@ class HomeViewBody extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class SearchServiceWidget extends StatefulWidget {
-  const SearchServiceWidget({
-    super.key,
-  });
-
-  @override
-  State<SearchServiceWidget> createState() => _SearchServiceWidgetState();
-}
-
-class _SearchServiceWidgetState extends State<SearchServiceWidget> {
-  TextEditingController? controller;
-  @override
-  void initState() {
-    controller = TextEditingController();
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    controller!.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CustomTextField(
-          controller: controller,
-          prefixIcon: const Icon(Icons.search, color: Colors.grey),
-          suffixIcon: const Icon(Icons.list, color: Colors.grey),
-          hintText: S.of(context).search,
-          textInputType: TextInputType.text,
-          onChanged: (text) {
-            context.read<ServicesItemCubit>().filterServices(text);
-          },
-        ),
-        const SizedBox(height: 10),
-        const FeaturedServiceWidget(),
-      ],
+    )
     );
   }
 }

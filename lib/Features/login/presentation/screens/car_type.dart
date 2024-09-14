@@ -1,4 +1,5 @@
 import 'package:carwash/Features/home/presentation/views/home_nav_bar_widget.dart';
+import 'package:carwash/Features/home/presentation/views/home_view.dart';
 import 'package:carwash/Features/login/presentation/widgets/blububle.dart';
 import 'package:carwash/Features/login/presentation/widgets/button_weidget.dart';
 import 'package:carwash/Features/login/presentation/widgets/small_text_weidget.dart';
@@ -162,7 +163,7 @@ class _CarTypeState extends State<CarType> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const HomeNavBarWidget(),
+                              builder: (context) => const HomeView(),
                             ),
                           );
                         } else if (state is SignUpFailure) {

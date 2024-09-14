@@ -30,10 +30,7 @@ class _HomeNavBarWidgetState extends State<HomeNavBarWidget> {
   @override
   Widget build(BuildContext context) {
     return PersistentTabView(
-
       context,
-
-      
       screens: _buildScreens(),
       items: _navBarsItems(context),
       controller: _controller,

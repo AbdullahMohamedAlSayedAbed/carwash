@@ -63,7 +63,7 @@ class _LoginState extends State<Login> {
             } else {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => const HomeNavBarWidget()),
+                MaterialPageRoute(builder: (context) => const HomeView()),
               );
             }
           } else if (state is SignInWithFacebookSuccess) {
@@ -75,18 +75,18 @@ class _LoginState extends State<Login> {
             } else {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => const HomeNavBarWidget()),
+                MaterialPageRoute(builder: (context) => const HomeView()),
               );
             }
           } else if (state is SignInWithEmailSuccess) {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => const HomeNavBarWidget()),
+              MaterialPageRoute(builder: (context) => const HomeView()),
             );
           } else if (state is SignInWithFacebookSuccess) {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => const HomeNavBarWidget()),
+              MaterialPageRoute(builder: (context) => const HomeView()),
             );
           } else if (state is SignInFailure) {
             AwesomeDialog(
