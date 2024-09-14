@@ -26,16 +26,15 @@ class ProfileViewBody extends StatelessWidget {
         icon: Icons.edit,
       ),
       SettingsItemModel(
-          backgroundColor: Colors.blue,
-          text: S.of(context).PaymentInformation,
-          icon: Icons.payment,
-          onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return const StandardWashView();
-            }));
-          },
-          ),
-          
+        backgroundColor: Colors.blue,
+        text: S.of(context).PaymentInformation,
+        icon: Icons.payment,
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return const StandardWashView();
+          }));
+        },
+      ),
       SettingsItemModel(
           backgroundColor: Colors.yellow,
           text: S.of(context).LoyaltyClub,

@@ -10,8 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PaymentMethodScreen extends StatefulWidget {
-  const PaymentMethodScreen({super.key,  this.price});
-  final double? price;
+  const PaymentMethodScreen({super.key});
   @override
   State<PaymentMethodScreen> createState() => _PaymentMethodScreenState();
 }

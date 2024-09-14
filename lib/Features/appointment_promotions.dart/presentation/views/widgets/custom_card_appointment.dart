@@ -1,7 +1,7 @@
 import 'package:carwash/Features/appointment_promotions.dart/domin/entities/appointment_entity.dart';
 import 'package:carwash/Features/appointment_promotions.dart/presentation/views/widgets/custom_image_card.dart';
 import 'package:carwash/Features/home/presentation/views/widgets/custom_secondary_button.dart';
-import 'package:carwash/Features/services/presentation/views/payment_method_screen.dart';
+import 'package:carwash/Features/wash_service/presentation/views/services/date_time_screen.dart';
 import 'package:carwash/core/Utils/app_color.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
 import 'package:flutter/material.dart';
@@ -54,8 +54,7 @@ class CustomCardAppointment extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => PaymentMethodScreen(
-                                      price: appointmentEntity.price)));
+                                  builder: (context) => DateTimeScreen()));
                         }),
                   ],
                 ),

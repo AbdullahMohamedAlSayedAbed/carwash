@@ -48,13 +48,15 @@ class CustomCardPromotions extends StatelessWidget {
                         maxLines: 1,
                       ),
                     ),
-                    CustomSecondaryButton(text: "join now", onPressed: () {
-                                                Navigator.push(
+                    CustomSecondaryButton(
+                        text: "join now",
+                        onPressed: () {
+                          Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => PaymentMethodScreen(
-                                      price: promotionsEntity.newPrice)));
-                    }),
+                                  builder: (context) =>
+                                      const PaymentMethodScreen()));
+                        }),
                   ],
                 ),
               ),
@@ -95,3 +97,6 @@ class CustomCardPromotions extends StatelessWidget {
     );
   }
 }
+
+
+

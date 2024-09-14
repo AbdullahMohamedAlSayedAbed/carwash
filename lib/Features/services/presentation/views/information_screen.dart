@@ -1,3 +1,4 @@
+import 'package:carwash/Features/profile_and_stander_wash/presentation/views/standard_wash_view.dart';
 import 'package:carwash/Features/services/presentation/views/payment_method_screen.dart';
 import 'package:carwash/Features/services/presentation/widgets/custom_material_button.dart';
 import 'package:carwash/Features/services/presentation/widgets/custom_process_app_bar.dart';
@@ -68,7 +69,11 @@ class InformationScreen extends StatelessWidget {
               const Divider(),
               CustomMaterialButton(
                 label: 'Next',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const StandardWashView();
+                  }));
+                },
               )
             ],
           ),

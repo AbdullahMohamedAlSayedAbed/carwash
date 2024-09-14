@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:carwash/Features/profile_and_stander_wash/data/repo/profile_repo_impl.dart';
 import 'package:carwash/Features/profile_and_stander_wash/domin/entities/user_entity.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:meta/meta.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -12,6 +13,14 @@ class GetProfileDataCubit extends Cubit<GetProfileDataState> {
   Future<void> getProfileData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? uid = prefs.getString('uid');
+    if (uid == null) {
+      User? user;
+      user = FirebaseAuth.instance.currentUser;
+      if (user != null) {
+        uid = user.uid;
+        prefs.setString('uid', uid);
+      }
+    }
     emit(GetProfileDataLoading());
     try {
       final UserEntity userData = await profileRepo.getUserData(uid: uid!);

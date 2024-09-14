@@ -5,6 +5,7 @@ import 'package:carwash/Features/login/presentation/widgets/button_weidget.dart'
 import 'package:carwash/Features/login/presentation/widgets/text.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Intro extends StatefulWidget {
   const Intro({super.key});
@@ -14,6 +15,7 @@ class Intro extends StatefulWidget {
 }
 
 class _IntroState extends State<Intro> {
+
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 3), () {

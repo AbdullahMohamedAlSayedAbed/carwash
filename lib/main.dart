@@ -6,9 +6,11 @@ import 'package:carwash/Features/login/presentation/cubit/getcars/getcars_cubit.
 import 'package:carwash/Features/login/presentation/cubit/intro_state/intro_cubit.dart';
 import 'package:carwash/Features/login/presentation/cubit/intro_state/login_validator_cubit.dart';
 import 'package:carwash/Features/login/presentation/cubit/login/reset_password/resetpassword_cubit.dart';
+import 'package:carwash/Features/login/presentation/cubit/rember_me/remember_me_cubit.dart';
 import 'package:carwash/Features/login/presentation/cubit/sign_up/sign_up_cubit.dart';
 import 'package:carwash/Features/login/presentation/screens/intro.dart';
 import 'package:carwash/constants.dart';
+import 'package:carwash/core/Utils/api_keys.dart';
 import 'package:carwash/core/Utils/app_color.dart';
 import 'package:carwash/core/controllers/cubit/localizations_cubit.dart';
 import 'package:carwash/core/databases/cache/cache_helper.dart';
@@ -20,6 +22,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
 import 'core/services/custom_bloc_observer.dart';
@@ -29,6 +32,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  Stripe.publishableKey = ApiKeys.publishKey;
   await Hive.initFlutter();
   Hive.registerAdapter(AppointmentEntityAdapter());
   Hive.registerAdapter(PromotionsEntityAdapter());
@@ -37,6 +41,7 @@ void main() async {
   setupGetit();
   await ShardPref.init();
   await CacheHelper.init();
+
   Bloc.observer = CustomBlocObserver();
   runApp(const CarWash());
 }
@@ -67,6 +72,9 @@ class CarWash extends StatelessWidget {
           BlocProvider(
             create: (context) => ResetPasswordCubit(
                 UserRepositoryImpl(firebaseDataSource: FirebaseDataSource())),
+          ),
+                  BlocProvider<RememberMeCubit>(
+            create: (context) => RememberMeCubit(),
           ),
         ],
         child: BlocBuilder<LocalizationsCubit, Locale>(
