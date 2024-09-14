@@ -8,7 +8,6 @@ import 'package:carwash/Features/login/presentation/cubit/intro_state/login_vali
 import 'package:carwash/Features/login/presentation/cubit/login/reset_password/resetpassword_cubit.dart';
 import 'package:carwash/Features/login/presentation/cubit/sign_up/sign_up_cubit.dart';
 import 'package:carwash/Features/login/presentation/screens/intro.dart';
-import 'package:carwash/Features/login/presentation/screens/login.dart';
 import 'package:carwash/constants.dart';
 import 'package:carwash/core/Utils/app_color.dart';
 import 'package:carwash/core/controllers/cubit/localizations_cubit.dart';
@@ -23,7 +22,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
-
 import 'core/services/custom_bloc_observer.dart';
 
 void main() async {
@@ -51,7 +49,7 @@ class CarWash extends StatelessWidget {
     return MultiBlocProvider(
         providers: [
           BlocProvider(
-            create: (context) => LocalizationsCubit(),
+            create: (context) => LocalizationsCubit()..gitLanguage(),
           ),
           BlocProvider(
             create: (context) => IntroCubit(),

@@ -1,5 +1,4 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
-import 'package:carwash/Features/home/presentation/views/home_nav_bar_widget.dart';
 import 'package:carwash/Features/home/presentation/views/home_view.dart';
 import 'package:carwash/Features/login/data/datasource/firebase_datasource.dart';
 import 'package:carwash/Features/login/data/reposotries/user_repository_impl.dart';
