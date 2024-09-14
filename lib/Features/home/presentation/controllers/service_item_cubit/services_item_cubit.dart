@@ -7,7 +7,7 @@ class ServicesItemCubit extends Cubit<ServicesItemState> {
 
   ServicesItemCubit(List<ServicesItemModel> initialItems)
       : super(ServicesItemInitial(initialItems)) {
-    originalItems = initialItems; // القائمة الأصلية تُمرر كمعطى
+    originalItems = initialItems; 
   }
 
   void filterServices(String searchTerm) {

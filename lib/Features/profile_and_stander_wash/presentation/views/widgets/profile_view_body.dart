@@ -1,6 +1,6 @@
 import 'package:carwash/Features/login/presentation/screens/login.dart';
 import 'package:carwash/Features/profile_and_stander_wash/data/models/settings_item_model.dart';
-import 'package:carwash/Features/profile_and_stander_wash/presentation/controllers/cubit/get_profile_data_cubit.dart';
+import 'package:carwash/Features/profile_and_stander_wash/presentation/controllers/get_profile_data_cubit/get_profile_data_cubit.dart';
 import 'package:carwash/Features/profile_and_stander_wash/presentation/views/standard_wash_view.dart';
 import 'package:carwash/Features/profile_and_stander_wash/presentation/views/widgets/custom_car_type.dart';
 import 'package:carwash/Features/profile_and_stander_wash/presentation/views/widgets/custom_image_profile.dart';

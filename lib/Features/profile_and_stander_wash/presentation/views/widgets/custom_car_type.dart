@@ -1,4 +1,5 @@
 import 'package:carwash/Features/home/presentation/views/widgets/custom_secondary_button.dart';
+import 'package:carwash/Features/login/presentation/screens/car_type.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
 import 'package:carwash/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,10 @@ class CustomCarType extends StatelessWidget {
             Text(carType,
                 style: AppStyles.style18.copyWith(color: Colors.grey)),
             const Spacer(),
-            CustomSecondaryButton(text: S.of(context).Change, onPressed: () {}),
+            CustomSecondaryButton(text: S.of(context).Change, onPressed: () {
+               Navigator.pushReplacement(context, MaterialPageRoute(builder: 
+              (context) => const CarType(),));
+            }),
           ],
         ),
       ],

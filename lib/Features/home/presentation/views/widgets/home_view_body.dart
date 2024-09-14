@@ -7,7 +7,7 @@ import 'package:carwash/Features/home/presentation/views/about_us_view.dart';
 import 'package:carwash/Features/home/presentation/views/widgets/custom_notifications_icon_button.dart';
 import 'package:carwash/Features/home/presentation/views/widgets/search_service_widget.dart';
 import 'package:carwash/Features/home/presentation/views/widgets/your_appointment_widget.dart';
-import 'package:carwash/Features/profile_and_stander_wash/presentation/controllers/cubit/get_profile_data_cubit.dart';
+import 'package:carwash/Features/profile_and_stander_wash/presentation/controllers/get_profile_data_cubit/get_profile_data_cubit.dart';
 import 'package:carwash/constants.dart';
 import 'package:carwash/core/Utils/app_styles.dart';
 import 'package:carwash/generated/l10n.dart';

@@ -1,13 +1,10 @@
 import 'package:carwash/Features/home/presentation/views/home_view.dart';
-import 'package:carwash/Features/login/presentation/cubit/intro_state/intro_cubit.dart';
-import 'package:carwash/Features/login/presentation/cubit/intro_state/intro_state.dart';
 import 'package:carwash/Features/login/presentation/screens/login.dart';
 import 'package:carwash/Features/login/presentation/widgets/blububle.dart';
 import 'package:carwash/Features/login/presentation/widgets/button_weidget.dart';
 import 'package:carwash/Features/login/presentation/widgets/text.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Intro extends StatefulWidget {
   const Intro({super.key});

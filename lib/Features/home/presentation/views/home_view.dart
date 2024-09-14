@@ -1,11 +1,8 @@
 import 'package:carwash/Features/home/presentation/controllers/bottom_nav_cubit/bottom_nav_cubit.dart';
 import 'package:carwash/Features/home/presentation/views/widgets/custom_bottom_nav_bar_bloc_builder.dart';
-import 'package:carwash/Features/home/presentation/views/widgets/custom_notifications_icon_button.dart';
 import 'package:carwash/Features/profile_and_stander_wash/data/repo/profile_repo_impl.dart';
-import 'package:carwash/Features/profile_and_stander_wash/presentation/controllers/cubit/get_profile_data_cubit.dart';
-import 'package:carwash/core/Utils/app_color.dart';
+import 'package:carwash/Features/profile_and_stander_wash/presentation/controllers/get_profile_data_cubit/get_profile_data_cubit.dart';
 import 'package:carwash/core/services/firestore_service.dart';
-import 'package:carwash/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

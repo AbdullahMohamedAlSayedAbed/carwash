@@ -5,6 +5,7 @@ import 'package:carwash/Features/profile_and_stander_wash/data/repo/profile_repo
 import 'package:carwash/core/services/data_service.dart';
 import 'package:carwash/core/services/firestore_service.dart';
 import 'package:get_it/get_it.dart';
+import 'package:image_picker/image_picker.dart';
 
 final getIt = GetIt.instance;
 
@@ -13,6 +14,7 @@ void setupGetit() {
   getIt.registerSingleton<ProfileRepoImpl>(
     ProfileRepoImpl(databaseService: getIt<DatabaseService>()),
   );
+  getIt.registerSingleton<ImagePicker>(ImagePicker());
   getIt.registerSingleton<AppointmentAndPromotionRepoImpl>(
     AppointmentAndPromotionRepoImpl(
       remoteDataSource:

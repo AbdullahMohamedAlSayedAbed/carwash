@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:carwash/Features/login/presentation/cubit/login/reset_password/resetpassword_state.dart';
-import 'package:equatable/equatable.dart';
 import 'package:carwash/Features/login/data/reposotries/user_repository_impl.dart';
 
 class ResetPasswordCubit extends Cubit<ResetPasswordState> {
